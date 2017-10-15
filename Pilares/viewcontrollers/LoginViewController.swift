@@ -10,17 +10,23 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    
+    @IBOutlet weak var inputEmail: UITextField!
+    @IBOutlet weak var inputName: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    @IBAction func btnLoginTapped(_ sender: UIButton) {
+        
+        UserDefaults.standard.set(inputEmail.text, forKey: "email")
+        UserDefaults.standard.set(inputName.text, forKey: "name")
+    }
 
     /*
     // MARK: - Navigation

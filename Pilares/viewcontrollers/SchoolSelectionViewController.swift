@@ -8,17 +8,44 @@
 
 import UIKit
 
-class SchoolSelectionViewController: UIViewController {
+class SchoolSelectionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet var pckSchool: UIPickerView!
+    @IBOutlet var lblName: UILabel!
+    @IBOutlet var lblEmail: UILabel!
+    
+    let schools = ["Argentina School", "San Gabriel", "Lomas de Nuñez"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let email = UserDefaults.standard.object(forKey: "email") as? String {
+            lblEmail.text = email
+        }
+        
+        if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+            lblName.text = aName
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+  
+        return 1
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+// ATT
+//        if let email = UserDefaults.standard.object(forKey: "email") as? String {
+//            lblEmail.text = email
+//        }
+//        
+//        if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+//            lblName.text = aName
+//        }
+
+        
     }
     
 
