@@ -1,0 +1,6 @@
+framework module Pods_Pilares {
+  umbrella header "Pods-Pilares-umbrella.h"
+
+  export *
+  module * { export * }
+}
