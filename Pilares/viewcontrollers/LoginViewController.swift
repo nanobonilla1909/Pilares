@@ -18,7 +18,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let email = UserDefaults.standard.object(forKey: "email") as? String {
+            inputEmail.text = email
+        }
+        
+        if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+            
+            inputName.text = aName
+        }
+
     }
 
     

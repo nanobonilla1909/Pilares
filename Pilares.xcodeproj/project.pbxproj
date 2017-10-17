@@ -15,6 +15,11 @@
 		67F7768B1F93DE030068D38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F776891F93DE030068D38C /* LaunchScreen.storyboard */; };
 		67F776971F93E7410068D38C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776961F93E7410068D38C /* LoginViewController.swift */; };
 		67F776991F93E8390068D38C /* SchoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776981F93E8390068D38C /* SchoolSelectionViewController.swift */; };
+		67F776BC1F94D4010068D38C /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776BB1F94D4010068D38C /* Dish.swift */; };
+		67F776BE1F94D7240068D38C /* DishesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776BD1F94D7240068D38C /* DishesService.swift */; };
+		67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C01F94E4B20068D38C /* DishesDAO.swift */; };
+		67F776C31F94E85D0068D38C /* DishesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C21F94E85D0068D38C /* DishesTableViewController.swift */; };
+		67F776C51F94EA5F0068D38C /* DishesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C41F94EA5F0068D38C /* DishesTableViewCell.swift */; };
 		F8753A5A64F7CEF1068A7ADB /* Pods_Pilares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097909B448EE1C1DDD7A3CEE /* Pods_Pilares.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +36,11 @@
 		67F7768C1F93DE030068D38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67F776961F93E7410068D38C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		67F776981F93E8390068D38C /* SchoolSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolSelectionViewController.swift; path = viewcontrollers/SchoolSelectionViewController.swift; sourceTree = "<group>"; };
+		67F776BB1F94D4010068D38C /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dish.swift; path = model/Dish.swift; sourceTree = "<group>"; };
+		67F776BD1F94D7240068D38C /* DishesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishesService.swift; sourceTree = "<group>"; };
+		67F776C01F94E4B20068D38C /* DishesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesDAO.swift; path = dao/DishesDAO.swift; sourceTree = "<group>"; };
+		67F776C21F94E85D0068D38C /* DishesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesTableViewController.swift; path = viewcontrollers/DishesTableViewController.swift; sourceTree = "<group>"; };
+		67F776C41F94EA5F0068D38C /* DishesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesTableViewCell.swift; path = views/DishesTableViewCell.swift; sourceTree = "<group>"; };
 		890FF52325F9FD1E7AEFAFC8 /* Pods-Pilares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilares.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pilares/Pods-Pilares.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,10 +85,11 @@
 		67F7767C1F93DE030068D38C /* Pilares */ = {
 			isa = PBXGroup;
 			children = (
-				67F776951F93DF2F0068D38C /* views */,
 				67F776941F93DF280068D38C /* model */,
 				67F776931F93DF1C0068D38C /* services */,
+				67F776BF1F94E4110068D38C /* dao */,
 				67F776921F93DF0E0068D38C /* viewcontrollers */,
+				67F776951F93DF2F0068D38C /* views */,
 				67F7767D1F93DE030068D38C /* AppDelegate.swift */,
 				67F7767F1F93DE030068D38C /* ViewController.swift */,
 				67F776811F93DE030068D38C /* Main.storyboard */,
@@ -95,6 +106,7 @@
 			children = (
 				67F776961F93E7410068D38C /* LoginViewController.swift */,
 				67F776981F93E8390068D38C /* SchoolSelectionViewController.swift */,
+				67F776C21F94E85D0068D38C /* DishesTableViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -102,6 +114,7 @@
 		67F776931F93DF1C0068D38C /* services */ = {
 			isa = PBXGroup;
 			children = (
+				67F776BD1F94D7240068D38C /* DishesService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -109,6 +122,7 @@
 		67F776941F93DF280068D38C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				67F776BB1F94D4010068D38C /* Dish.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -116,8 +130,17 @@
 		67F776951F93DF2F0068D38C /* views */ = {
 			isa = PBXGroup;
 			children = (
+				67F776C41F94EA5F0068D38C /* DishesTableViewCell.swift */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		67F776BF1F94E4110068D38C /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				67F776C01F94E4B20068D38C /* DishesDAO.swift */,
+			);
+			name = dao;
 			sourceTree = "<group>";
 		};
 		CEA212A2FD1DA641BA5C6645 /* Pods */ = {
@@ -256,7 +279,12 @@
 				67F776971F93E7410068D38C /* LoginViewController.swift in Sources */,
 				67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */,
 				67F776991F93E8390068D38C /* SchoolSelectionViewController.swift in Sources */,
+				67F776C51F94EA5F0068D38C /* DishesTableViewCell.swift in Sources */,
+				67F776BE1F94D7240068D38C /* DishesService.swift in Sources */,
+				67F776BC1F94D4010068D38C /* Dish.swift in Sources */,
 				67F776801F93DE030068D38C /* ViewController.swift in Sources */,
+				67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */,
+				67F776C31F94E85D0068D38C /* DishesTableViewController.swift in Sources */,
 				67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
