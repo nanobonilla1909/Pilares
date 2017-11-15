@@ -11,13 +11,22 @@ import UIKit
 class DishesTableViewController: UITableViewController {
 
     var mainDishes: [Dish] = []
-    
+    var pruebaItems: [OrderItem] = []
+   
+    // var mainOrder: OrderManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let mainOrder = OrderManager.getInstance()
+        
+        let orderI1 = OrderItem(productId: 1, shiftId: 2, quantity: 23, comments: "sin sal")
+        
+        mainOrder.addItem(newItem: orderI1)
+        pruebaItems = mainOrder.getItems()
+        print(pruebaItems[0].comments)
+        
         let dishesService = DishesService()
-        print("antes de llamar al getDishes del TableViewController")
         dishesService.getDishesFromAPI(termine: {
             dishesArray in
             

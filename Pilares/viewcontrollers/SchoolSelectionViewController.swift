@@ -16,16 +16,23 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDataSource, U
     @IBOutlet var lblEmail: UILabel!
     
     
+    
+    
     var dictSchools: [Int: String] = [1:"Argentina School", 2: "San Gabriel", 3:"Lomas de Nuñez"]
     var arrSchools:[String] = []
     
-    
-    
-    // let schools = ["1. Argentina School", "2. San Gabriel", "3. Lomas de Nuñez"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let mainInstituteList = InstitutesManager.getInstance()
+        var pruebaInst = mainInstituteList.getInstitutes()
+        print(pruebaInst[0].instituteName)
+        print(pruebaInst[1].instituteName)
+        
+        
         if let email = UserDefaults.standard.object(forKey: "email") as? String {
             lblEmail.text = email
         }
@@ -78,15 +85,5 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDataSource, U
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

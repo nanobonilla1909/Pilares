@@ -16,17 +16,46 @@ class DishesDAO {
     
     func getDishesFromAPI(termine: @escaping ([Dish])->Void) -> Void {
         
-        print("antes del Alamofire")
-        Alamofire.request("http://ttsocial.herokuapp.com/webapi/timeline").responseJSON(completionHandler: {
+       let urltemp = "http://weminipocket.weoneconsulting.com/handlers/menuesget.ashx?key=69|2|1|201710111843".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        Alamofire.request(urltemp!).responseJSON(completionHandler: {
             myResponse in
-            if let value = myResponse.value as? [[String: AnyObject]] {
-                print("entra al if final")
+            if let value = myResponse.value as? [String: AnyObject] {
+                
                 var dishesArray: [Dish] = []
-                for dishesDictionary in value {
-//                    if let aDish = News(dictionary: newsDictionary) {
-                        let aDish = Dish(id: 1, description: "sarasa", price: 20, promo: "PROMO DEL DIA", imgUrl: "")
-                        dishesArray.append(aDish)
+                var idDish: Int = 0
+                var promoDish: String = ""
+                var descriptionDish: String = ""
+                var priceDish: Double = 0
+                var urlDish: String = ""
+                
+                if let arrayData = value["data"] as? [[String: AnyObject]] {
                     
+                    for dishesDictionary in arrayData {
+                        
+                        if let idMenu = dishesDictionary["idMenu"] as? Int {
+                            idDish = idMenu
+                        }
+                        if let price = dishesDictionary["Precio"] as? Double {
+                            priceDish = price
+                        }
+                        if let promo = dishesDictionary["Promo"] as? String {
+                            promoDish = promo
+                        }
+                        if let description = dishesDictionary["Descripcion"] as? String {
+                            descriptionDish = description
+                        }
+                        if let aUrl = dishesDictionary["ImgFileName"] as? String {
+                            urlDish = aUrl
+                        }
+                        
+                        
+                        let aDish = Dish(id: idDish, description: descriptionDish, price: priceDish, promo: promoDish, imgUrl: urlDish)
+                        
+                        dishesArray.append(aDish)
+                        
+                    }
+
                 }
                 termine(dishesArray)
             }

@@ -1,0 +1,18 @@
+URL del Documento
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosSet.ashx?
+key=1&P=[{%22IdProducto%22:1,%22IdHorario%22:2,%20%22Cantidad%22:1,%20%22Observacion%22:%22sin%20mayonesa%22},
+{%22IdProducto%22:2,%22IdHorario%22:3,%20%22Cantidad%22:2,%20%22Observacion%22:%22%22},
+{%22IdProducto%22:3,%22IdHorario%22:4,%20%22Cantidad%22:3,%20%22Observacion%22:%22sin%20lechuga%22}]
+
+
+URL Sin Porcentajes
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosSet.ashx?
+key=1&P=[{IdProducto:1,IdHorario:2,Cantidad:1,Observacion: 'sin mayonesa},
+{IdProducto:2,dHorario:3,Cantidad:2,Observacion:''},
+{IdProducto:3,IdHorario:4,Cantidad:3,Observacion:'sin lechuga}]
+
+URL Sin Porcentajes todo junto y nro de Pedido cambiado
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosSet.ashx?key=1&P=[{IdProducto:100,IdHorario:2,Cantidad:1,Observacion: 'sin mayonesa'},{IdProducto:200,dHorario:3,Cantidad:2,Observacion:''},{IdProducto:300,IdHorario:4,Cantidad:3,Observacion:'sin lechuga'}]

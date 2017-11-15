@@ -15,10 +15,9 @@ class DishesService {
     func getDishesFromAPI(termine: @escaping ([Dish])-> Void) -> Void {
         
         let dishDAO = DishesDAO()
-        print("antes del networkManager")
+        
         if let networkManager = NetworkReachabilityManager(), networkManager.isReachable {
             
-            print("adentro del networkManager")
             dishDAO.getDishesFromAPI(termine: { (dishesArray) in
                 termine(dishesArray)
             })

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/dao/DishesDAO.swift"
+            timestampString = "529955969.987995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getDishesFromAPI(termine:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.DishesDAO.(getDishesFromAPI (termine : (Swift.Array&lt;Pilares.Dish&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/dao/DishesDAO.swift"
+                  timestampString = "529956023.680712"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.DishesDAO.(getDishesFromAPI (termine : (Swift.Array&lt;Pilares.Dish&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/dao/DishesDAO.swift"
+                  timestampString = "529956023.683921"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "1052">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/dao/DishesDAO.swift"
+            timestampString = "529955969.987995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getDishesFromAPI(termine:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/dao/DishesDAO.swift"
+            timestampString = "529955969.987995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getDishesFromAPI(termine:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/dao/DishesDAO.swift"
+            timestampString = "529955969.987995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getDishesFromAPI(termine:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/dao/DishesDAO.swift"
+            timestampString = "529956005.402323"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getDishesFromAPI(termine:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.DishesDAO.(getDishesFromAPI (termine : (Swift.Array&lt;Pilares.Dish&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/dao/DishesDAO.swift"
+                  timestampString = "529956023.709396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1238">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.DishesDAO.(getDishesFromAPI (termine : (Swift.Array&lt;Pilares.Dish&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/dao/DishesDAO.swift"
+                  timestampString = "529956023.715203"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1554">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/viewcontrollers/DishesTableViewController.swift"
+            timestampString = "530046950.031738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/viewcontrollers/SchoolSelectionViewController.swift"
+            timestampString = "532399072.888902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.SchoolSelectionViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/SchoolSelectionViewController.swift"
+                  timestampString = "532399184.052357"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "955">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.SchoolSelectionViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/SchoolSelectionViewController.swift"
+                  timestampString = "532399184.060662"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1990">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -17,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Carga los Institutos
+        let mainInstituteList = InstitutesManager.getInstance()
+        
+        let Inst1 = Institute(instituteId: 1, instituteName: "Argentina School")
+        let Inst2 = Institute(instituteId: 2, instituteName: "San Gabriel")
+
+        mainInstituteList.addInstitute(newItem: Inst1)
+        mainInstituteList.addInstitute(newItem: Inst2)
+        
+
+
+        
+        
         return true
     }
 

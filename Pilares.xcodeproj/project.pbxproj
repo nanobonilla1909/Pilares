@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA28991FBBBA92001D7328 /* InsitutesManager.swift */; };
+		67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289B1FBBBB03001D7328 /* Institute.swift */; };
+		67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */; };
+		67AA28A01FBBBBAD001D7328 /* InstitutesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */; };
 		67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767D1F93DE030068D38C /* AppDelegate.swift */; };
 		67F776801F93DE030068D38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767F1F93DE030068D38C /* ViewController.swift */; };
 		67F776831F93DE030068D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F776811F93DE030068D38C /* Main.storyboard */; };
@@ -20,12 +24,18 @@
 		67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C01F94E4B20068D38C /* DishesDAO.swift */; };
 		67F776C31F94E85D0068D38C /* DishesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C21F94E85D0068D38C /* DishesTableViewController.swift */; };
 		67F776C51F94EA5F0068D38C /* DishesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C41F94EA5F0068D38C /* DishesTableViewCell.swift */; };
+		67F776C91F9684420068D38C /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C81F9684420068D38C /* OrderItem.swift */; };
+		67F776CB1F9776E50068D38C /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776CA1F9776E50068D38C /* OrderManager.swift */; };
 		F8753A5A64F7CEF1068A7ADB /* Pods_Pilares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097909B448EE1C1DDD7A3CEE /* Pods_Pilares.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		097909B448EE1C1DDD7A3CEE /* Pods_Pilares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1DD1B2427C3A7C750226DB /* Pods-Pilares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilares.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pilares/Pods-Pilares.release.xcconfig"; sourceTree = "<group>"; };
+		67AA28991FBBBA92001D7328 /* InsitutesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsitutesManager.swift; path = model/InsitutesManager.swift; sourceTree = "<group>"; };
+		67AA289B1FBBBB03001D7328 /* Institute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institute.swift; path = model/Institute.swift; sourceTree = "<group>"; };
+		67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesService.swift; path = services/InstitutesService.swift; sourceTree = "<group>"; };
+		67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesDAO.swift; path = dao/InstitutesDAO.swift; sourceTree = "<group>"; };
 		67F7767A1F93DE030068D38C /* Pilares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7767D1F93DE030068D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F7767F1F93DE030068D38C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +51,8 @@
 		67F776C01F94E4B20068D38C /* DishesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesDAO.swift; path = dao/DishesDAO.swift; sourceTree = "<group>"; };
 		67F776C21F94E85D0068D38C /* DishesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesTableViewController.swift; path = viewcontrollers/DishesTableViewController.swift; sourceTree = "<group>"; };
 		67F776C41F94EA5F0068D38C /* DishesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesTableViewCell.swift; path = views/DishesTableViewCell.swift; sourceTree = "<group>"; };
+		67F776C81F9684420068D38C /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		67F776CA1F9776E50068D38C /* OrderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		890FF52325F9FD1E7AEFAFC8 /* Pods-Pilares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilares.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pilares/Pods-Pilares.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				67F776BD1F94D7240068D38C /* DishesService.swift */,
+				67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -123,6 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				67F776BB1F94D4010068D38C /* Dish.swift */,
+				67F776C81F9684420068D38C /* OrderItem.swift */,
+				67F776CA1F9776E50068D38C /* OrderManager.swift */,
+				67AA28991FBBBA92001D7328 /* InsitutesManager.swift */,
+				67AA289B1FBBBB03001D7328 /* Institute.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -139,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				67F776C01F94E4B20068D38C /* DishesDAO.swift */,
+				67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -276,15 +294,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F776CB1F9776E50068D38C /* OrderManager.swift in Sources */,
+				67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */,
 				67F776971F93E7410068D38C /* LoginViewController.swift in Sources */,
 				67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */,
 				67F776991F93E8390068D38C /* SchoolSelectionViewController.swift in Sources */,
 				67F776C51F94EA5F0068D38C /* DishesTableViewCell.swift in Sources */,
 				67F776BE1F94D7240068D38C /* DishesService.swift in Sources */,
+				67F776C91F9684420068D38C /* OrderItem.swift in Sources */,
 				67F776BC1F94D4010068D38C /* Dish.swift in Sources */,
+				67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */,
 				67F776801F93DE030068D38C /* ViewController.swift in Sources */,
 				67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */,
+				67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */,
 				67F776C31F94E85D0068D38C /* DishesTableViewController.swift in Sources */,
+				67AA28A01FBBBBAD001D7328 /* InstitutesDAO.swift in Sources */,
 				67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
