@@ -21,6 +21,8 @@ class LogueadoViewController: UIViewController {
         defaults.removeObject(forKey: "name")
         defaults.removeObject(forKey: "email")
         defaults.removeObject(forKey: "institute")
+        defaults.removeObject(forKey: "authkey")
+
         
     }
     

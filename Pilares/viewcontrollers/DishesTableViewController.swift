@@ -18,6 +18,7 @@ class DishesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("ya se ejecuta el viewdidload de la tabla de platos ....... ")
         let mainOrder = OrderManager.getInstance()
         
         let orderI1 = OrderItem(productId: 1, shiftId: 2, quantity: 23, comments: "sin sal")

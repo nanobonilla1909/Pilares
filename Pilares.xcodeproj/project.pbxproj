@@ -19,13 +19,15 @@
 		67CC5B551FC6FCA5006369F5 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B541FC6FCA5006369F5 /* Authentication.swift */; };
 		67CC5B571FC6FDFC006369F5 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B561FC6FDFC006369F5 /* DishCategory.swift */; };
 		67CC5B591FC6FE5E006369F5 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B581FC6FE5E006369F5 /* Shift.swift */; };
+		67CC5B5B1FC72723006369F5 /* CategoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B5A1FC72723006369F5 /* CategoriesManager.swift */; };
+		67CC5B5D1FC727BE006369F5 /* ShiftsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B5C1FC727BE006369F5 /* ShiftsManager.swift */; };
+		67CC5B5F1FC75288006369F5 /* Dishes2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B5E1FC75288006369F5 /* Dishes2ViewController.swift */; };
 		67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767D1F93DE030068D38C /* AppDelegate.swift */; };
 		67F776801F93DE030068D38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767F1F93DE030068D38C /* ViewController.swift */; };
 		67F776831F93DE030068D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F776811F93DE030068D38C /* Main.storyboard */; };
 		67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67F776841F93DE030068D38C /* Pilares.xcdatamodeld */; };
 		67F776881F93DE030068D38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F776871F93DE030068D38C /* Assets.xcassets */; };
 		67F7768B1F93DE030068D38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F776891F93DE030068D38C /* LaunchScreen.storyboard */; };
-		67F776971F93E7410068D38C /* LoginViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776961F93E7410068D38C /* LoginViewControllerOld.swift */; };
 		67F776991F93E8390068D38C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776981F93E8390068D38C /* LoginViewController.swift */; };
 		67F776BC1F94D4010068D38C /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776BB1F94D4010068D38C /* Dish.swift */; };
 		67F776BE1F94D7240068D38C /* DishesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776BD1F94D7240068D38C /* DishesService.swift */; };
@@ -52,6 +54,9 @@
 		67CC5B541FC6FCA5006369F5 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = model/Authentication.swift; sourceTree = "<group>"; };
 		67CC5B561FC6FDFC006369F5 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DishCategory.swift; path = model/DishCategory.swift; sourceTree = "<group>"; };
 		67CC5B581FC6FE5E006369F5 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Shift.swift; path = model/Shift.swift; sourceTree = "<group>"; };
+		67CC5B5A1FC72723006369F5 /* CategoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesManager.swift; sourceTree = "<group>"; };
+		67CC5B5C1FC727BE006369F5 /* ShiftsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShiftsManager.swift; path = model/ShiftsManager.swift; sourceTree = "<group>"; };
+		67CC5B5E1FC75288006369F5 /* Dishes2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dishes2ViewController.swift; path = viewcontrollers/Dishes2ViewController.swift; sourceTree = "<group>"; };
 		67F7767A1F93DE030068D38C /* Pilares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7767D1F93DE030068D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F7767F1F93DE030068D38C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +65,6 @@
 		67F776871F93DE030068D38C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67F7768A1F93DE030068D38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67F7768C1F93DE030068D38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67F776961F93E7410068D38C /* LoginViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewControllerOld.swift; path = viewcontrollers/LoginViewControllerOld.swift; sourceTree = "<group>"; };
 		67F776981F93E8390068D38C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		67F776BB1F94D4010068D38C /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dish.swift; path = model/Dish.swift; sourceTree = "<group>"; };
 		67F776BD1F94D7240068D38C /* DishesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishesService.swift; sourceTree = "<group>"; };
@@ -133,11 +137,11 @@
 		67F776921F93DF0E0068D38C /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				67F776961F93E7410068D38C /* LoginViewControllerOld.swift */,
+				67CC5B4C1FC5BB8A006369F5 /* InitialViewController.swift */,
 				67F776981F93E8390068D38C /* LoginViewController.swift */,
 				67F776C21F94E85D0068D38C /* DishesTableViewController.swift */,
-				67CC5B4C1FC5BB8A006369F5 /* InitialViewController.swift */,
 				67CC5B4E1FC621B7006369F5 /* LogueadoViewController.swift */,
+				67CC5B5E1FC75288006369F5 /* Dishes2ViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -155,14 +159,16 @@
 		67F776941F93DF280068D38C /* model */ = {
 			isa = PBXGroup;
 			children = (
+				67CC5B541FC6FCA5006369F5 /* Authentication.swift */,
 				67F776BB1F94D4010068D38C /* Dish.swift */,
 				67F776C81F9684420068D38C /* OrderItem.swift */,
 				67F776CA1F9776E50068D38C /* OrderManager.swift */,
 				67AA28991FBBBA92001D7328 /* InsitutesManager.swift */,
 				67AA289B1FBBBB03001D7328 /* Institute.swift */,
-				67CC5B541FC6FCA5006369F5 /* Authentication.swift */,
-				67CC5B561FC6FDFC006369F5 /* DishCategory.swift */,
 				67CC5B581FC6FE5E006369F5 /* Shift.swift */,
+				67CC5B5C1FC727BE006369F5 /* ShiftsManager.swift */,
+				67CC5B561FC6FDFC006369F5 /* DishCategory.swift */,
+				67CC5B5A1FC72723006369F5 /* CategoriesManager.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -321,10 +327,11 @@
 			files = (
 				67F776CB1F9776E50068D38C /* OrderManager.swift in Sources */,
 				67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */,
-				67F776971F93E7410068D38C /* LoginViewControllerOld.swift in Sources */,
 				67CC5B531FC6FADC006369F5 /* UsersDAO.swift in Sources */,
+				67CC5B5F1FC75288006369F5 /* Dishes2ViewController.swift in Sources */,
 				67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */,
 				67F776991F93E8390068D38C /* LoginViewController.swift in Sources */,
+				67CC5B5B1FC72723006369F5 /* CategoriesManager.swift in Sources */,
 				67F776C51F94EA5F0068D38C /* DishesTableViewCell.swift in Sources */,
 				67CC5B571FC6FDFC006369F5 /* DishCategory.swift in Sources */,
 				67F776BE1F94D7240068D38C /* DishesService.swift in Sources */,
@@ -332,6 +339,7 @@
 				67F776BC1F94D4010068D38C /* Dish.swift in Sources */,
 				67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */,
 				67F776801F93DE030068D38C /* ViewController.swift in Sources */,
+				67CC5B5D1FC727BE006369F5 /* ShiftsManager.swift in Sources */,
 				67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */,
 				67CC5B511FC6F7AA006369F5 /* UsersService.swift in Sources */,
 				67CC5B551FC6FCA5006369F5 /* Authentication.swift in Sources */,

@@ -78,11 +78,28 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        UserDefaults.standard.set(txtEmail.text, forKey: "email")
-        UserDefaults.standard.set(txtName.text, forKey: "name")
-        UserDefaults.standard.set(instituteIdSelected, forKey: "institute")
+    @IBAction func loginTapped(_ sender: Any) {
+        
+        // Ejecuta la Autenticacion
+        
+        let authService = UsersService()
+        authService.getUserAuthFromAPI(termine: {
+            auth in
+            
+            print(auth.key)
+            
+            UserDefaults.standard.set(self.txtEmail.text, forKey: "email")
+            UserDefaults.standard.set(self.txtName.text, forKey: "name")
+            UserDefaults.standard.set(self.instituteIdSelected, forKey: "institute")
+            UserDefaults.standard.set(auth.key, forKey: "authkey")
+            
+            self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+            
+        })
+        
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
 // ATT

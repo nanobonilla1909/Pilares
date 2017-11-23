@@ -14,6 +14,8 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
 
         
+     
+        
         // Lee plist de parametros
         
         if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
@@ -23,7 +25,7 @@ class InitialViewController: UIViewController {
             }
         }
         
-        // Carga los Institutos
+        // Carga los Institutos y solo cuando termino paso a la pantalla de Login
         
         let institutesService = InstitutesService()
         institutesService.getInstitutesFromAPI(termine: {
