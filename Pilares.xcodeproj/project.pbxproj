@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67406D3E1FBF37F800CD311C /* PilaresParam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67406D3D1FBF37F800CD311C /* PilaresParam.plist */; };
 		67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA28991FBBBA92001D7328 /* InsitutesManager.swift */; };
 		67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289B1FBBBB03001D7328 /* Institute.swift */; };
 		67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */; };
 		67AA28A01FBBBBAD001D7328 /* InstitutesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */; };
+		67CC5B4D1FC5BB8A006369F5 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B4C1FC5BB8A006369F5 /* InitialViewController.swift */; };
+		67CC5B4F1FC621B7006369F5 /* LogueadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B4E1FC621B7006369F5 /* LogueadoViewController.swift */; };
+		67CC5B511FC6F7AA006369F5 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B501FC6F7AA006369F5 /* UsersService.swift */; };
+		67CC5B531FC6FADC006369F5 /* UsersDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B521FC6FADC006369F5 /* UsersDAO.swift */; };
+		67CC5B551FC6FCA5006369F5 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B541FC6FCA5006369F5 /* Authentication.swift */; };
+		67CC5B571FC6FDFC006369F5 /* DishCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B561FC6FDFC006369F5 /* DishCategory.swift */; };
+		67CC5B591FC6FE5E006369F5 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B581FC6FE5E006369F5 /* Shift.swift */; };
 		67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767D1F93DE030068D38C /* AppDelegate.swift */; };
 		67F776801F93DE030068D38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767F1F93DE030068D38C /* ViewController.swift */; };
 		67F776831F93DE030068D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F776811F93DE030068D38C /* Main.storyboard */; };
 		67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67F776841F93DE030068D38C /* Pilares.xcdatamodeld */; };
 		67F776881F93DE030068D38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F776871F93DE030068D38C /* Assets.xcassets */; };
 		67F7768B1F93DE030068D38C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F776891F93DE030068D38C /* LaunchScreen.storyboard */; };
-		67F776971F93E7410068D38C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776961F93E7410068D38C /* LoginViewController.swift */; };
-		67F776991F93E8390068D38C /* SchoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776981F93E8390068D38C /* SchoolSelectionViewController.swift */; };
+		67F776971F93E7410068D38C /* LoginViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776961F93E7410068D38C /* LoginViewControllerOld.swift */; };
+		67F776991F93E8390068D38C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776981F93E8390068D38C /* LoginViewController.swift */; };
 		67F776BC1F94D4010068D38C /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776BB1F94D4010068D38C /* Dish.swift */; };
 		67F776BE1F94D7240068D38C /* DishesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776BD1F94D7240068D38C /* DishesService.swift */; };
 		67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F776C01F94E4B20068D38C /* DishesDAO.swift */; };
@@ -32,10 +40,18 @@
 /* Begin PBXFileReference section */
 		097909B448EE1C1DDD7A3CEE /* Pods_Pilares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1DD1B2427C3A7C750226DB /* Pods-Pilares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilares.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pilares/Pods-Pilares.release.xcconfig"; sourceTree = "<group>"; };
+		67406D3D1FBF37F800CD311C /* PilaresParam.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PilaresParam.plist; sourceTree = "<group>"; };
 		67AA28991FBBBA92001D7328 /* InsitutesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsitutesManager.swift; path = model/InsitutesManager.swift; sourceTree = "<group>"; };
 		67AA289B1FBBBB03001D7328 /* Institute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institute.swift; path = model/Institute.swift; sourceTree = "<group>"; };
 		67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesService.swift; path = services/InstitutesService.swift; sourceTree = "<group>"; };
 		67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesDAO.swift; path = dao/InstitutesDAO.swift; sourceTree = "<group>"; };
+		67CC5B4C1FC5BB8A006369F5 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InitialViewController.swift; path = viewcontrollers/InitialViewController.swift; sourceTree = "<group>"; };
+		67CC5B4E1FC621B7006369F5 /* LogueadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogueadoViewController.swift; path = viewcontrollers/LogueadoViewController.swift; sourceTree = "<group>"; };
+		67CC5B501FC6F7AA006369F5 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UsersService.swift; path = services/UsersService.swift; sourceTree = "<group>"; };
+		67CC5B521FC6FADC006369F5 /* UsersDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDAO.swift; sourceTree = "<group>"; };
+		67CC5B541FC6FCA5006369F5 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = model/Authentication.swift; sourceTree = "<group>"; };
+		67CC5B561FC6FDFC006369F5 /* DishCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DishCategory.swift; path = model/DishCategory.swift; sourceTree = "<group>"; };
+		67CC5B581FC6FE5E006369F5 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Shift.swift; path = model/Shift.swift; sourceTree = "<group>"; };
 		67F7767A1F93DE030068D38C /* Pilares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7767D1F93DE030068D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F7767F1F93DE030068D38C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,8 +60,8 @@
 		67F776871F93DE030068D38C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67F7768A1F93DE030068D38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67F7768C1F93DE030068D38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67F776961F93E7410068D38C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
-		67F776981F93E8390068D38C /* SchoolSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchoolSelectionViewController.swift; path = viewcontrollers/SchoolSelectionViewController.swift; sourceTree = "<group>"; };
+		67F776961F93E7410068D38C /* LoginViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewControllerOld.swift; path = viewcontrollers/LoginViewControllerOld.swift; sourceTree = "<group>"; };
+		67F776981F93E8390068D38C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		67F776BB1F94D4010068D38C /* Dish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dish.swift; path = model/Dish.swift; sourceTree = "<group>"; };
 		67F776BD1F94D7240068D38C /* DishesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishesService.swift; sourceTree = "<group>"; };
 		67F776C01F94E4B20068D38C /* DishesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DishesDAO.swift; path = dao/DishesDAO.swift; sourceTree = "<group>"; };
@@ -109,6 +125,7 @@
 				67F776891F93DE030068D38C /* LaunchScreen.storyboard */,
 				67F7768C1F93DE030068D38C /* Info.plist */,
 				67F776841F93DE030068D38C /* Pilares.xcdatamodeld */,
+				67406D3D1FBF37F800CD311C /* PilaresParam.plist */,
 			);
 			path = Pilares;
 			sourceTree = "<group>";
@@ -116,9 +133,11 @@
 		67F776921F93DF0E0068D38C /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				67F776961F93E7410068D38C /* LoginViewController.swift */,
-				67F776981F93E8390068D38C /* SchoolSelectionViewController.swift */,
+				67F776961F93E7410068D38C /* LoginViewControllerOld.swift */,
+				67F776981F93E8390068D38C /* LoginViewController.swift */,
 				67F776C21F94E85D0068D38C /* DishesTableViewController.swift */,
+				67CC5B4C1FC5BB8A006369F5 /* InitialViewController.swift */,
+				67CC5B4E1FC621B7006369F5 /* LogueadoViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -128,6 +147,7 @@
 			children = (
 				67F776BD1F94D7240068D38C /* DishesService.swift */,
 				67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */,
+				67CC5B501FC6F7AA006369F5 /* UsersService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -140,6 +160,9 @@
 				67F776CA1F9776E50068D38C /* OrderManager.swift */,
 				67AA28991FBBBA92001D7328 /* InsitutesManager.swift */,
 				67AA289B1FBBBB03001D7328 /* Institute.swift */,
+				67CC5B541FC6FCA5006369F5 /* Authentication.swift */,
+				67CC5B561FC6FDFC006369F5 /* DishCategory.swift */,
+				67CC5B581FC6FE5E006369F5 /* Shift.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -157,6 +180,7 @@
 			children = (
 				67F776C01F94E4B20068D38C /* DishesDAO.swift */,
 				67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */,
+				67CC5B521FC6FADC006369F5 /* UsersDAO.swift */,
 			);
 			name = dao;
 			sourceTree = "<group>";
@@ -234,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F7768B1F93DE030068D38C /* LaunchScreen.storyboard in Resources */,
+				67406D3E1FBF37F800CD311C /* PilaresParam.plist in Resources */,
 				67F776881F93DE030068D38C /* Assets.xcassets in Resources */,
 				67F776831F93DE030068D38C /* Main.storyboard in Resources */,
 			);
@@ -296,18 +321,25 @@
 			files = (
 				67F776CB1F9776E50068D38C /* OrderManager.swift in Sources */,
 				67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */,
-				67F776971F93E7410068D38C /* LoginViewController.swift in Sources */,
+				67F776971F93E7410068D38C /* LoginViewControllerOld.swift in Sources */,
+				67CC5B531FC6FADC006369F5 /* UsersDAO.swift in Sources */,
 				67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */,
-				67F776991F93E8390068D38C /* SchoolSelectionViewController.swift in Sources */,
+				67F776991F93E8390068D38C /* LoginViewController.swift in Sources */,
 				67F776C51F94EA5F0068D38C /* DishesTableViewCell.swift in Sources */,
+				67CC5B571FC6FDFC006369F5 /* DishCategory.swift in Sources */,
 				67F776BE1F94D7240068D38C /* DishesService.swift in Sources */,
 				67F776C91F9684420068D38C /* OrderItem.swift in Sources */,
 				67F776BC1F94D4010068D38C /* Dish.swift in Sources */,
 				67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */,
 				67F776801F93DE030068D38C /* ViewController.swift in Sources */,
 				67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */,
+				67CC5B511FC6F7AA006369F5 /* UsersService.swift in Sources */,
+				67CC5B551FC6FCA5006369F5 /* Authentication.swift in Sources */,
+				67CC5B4F1FC621B7006369F5 /* LogueadoViewController.swift in Sources */,
 				67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */,
+				67CC5B591FC6FE5E006369F5 /* Shift.swift in Sources */,
 				67F776C31F94E85D0068D38C /* DishesTableViewController.swift in Sources */,
+				67CC5B4D1FC5BB8A006369F5 /* InitialViewController.swift in Sources */,
 				67AA28A01FBBBBAD001D7328 /* InstitutesDAO.swift in Sources */,
 				67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */,
 			);

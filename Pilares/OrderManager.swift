@@ -10,6 +10,13 @@ import Foundation
 
 public class OrderManager {
     
+    
+//    IdUsuario: En que momento lo obtengo?
+//    IdInstitucion: OK
+//    IdLocalPorEmpresa: ???
+//    Dia y Hora del Pedido: OK
+//    IdHorario: Horario que va a retirar el pedido OK
+    
     private var items: [OrderItem] = []
     
     private init() {}

@@ -29,7 +29,7 @@ class InstitutesDAO {
                     
                     for institutesDictionary in arrayData {
                         
-                        if let idInst = institutesDictionary["idInstitucion"] as? Int {
+                        if let idInst = institutesDictionary["IdInstitucion"] as? Int {
                             idInstitute = idInst
                         }
                         

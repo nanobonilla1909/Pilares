@@ -24,8 +24,7 @@ public class InstitutesManager {
     
     
     public func addInstitute(newItem: Institute) {
-        //crea order item
-        // agregar order item a items
+
         self.institutes.append(newItem)
     }
     

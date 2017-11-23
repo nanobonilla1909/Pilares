@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 
-
 class DishesService {
     
     func getDishesFromAPI(termine: @escaping ([Dish])-> Void) -> Void {

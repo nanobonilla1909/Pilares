@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public class Dish {
     
     var id: Int?

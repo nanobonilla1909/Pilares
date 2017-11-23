@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilares/dao/DishesDAO.swift"
-            timestampString = "529955969.987995"
+            timestampString = "532625598.609052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilares/dao/DishesDAO.swift"
-            timestampString = "529955969.987995"
+            timestampString = "532625598.609203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilares/dao/DishesDAO.swift"
-            timestampString = "529955969.987995"
+            timestampString = "532625598.609276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilares/dao/DishesDAO.swift"
-            timestampString = "529955969.987995"
+            timestampString = "532625598.609338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilares/dao/DishesDAO.swift"
-            timestampString = "529956005.402323"
+            timestampString = "532625598.609389"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilares/viewcontrollers/DishesTableViewController.swift"
-            timestampString = "530046950.031738"
+            timestampString = "533047508.725262"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -170,45 +170,154 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pilares/viewcontrollers/SchoolSelectionViewController.swift"
-            timestampString = "532399072.888902"
+            timestampString = "533047508.725339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/viewcontrollers/SchoolSelectionViewController.swift"
+            timestampString = "533047508.725738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/dao/InstitutesDAO.swift"
+            timestampString = "533047508.726056"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getInstitutesFromAPI(termine:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/viewcontrollers/LoginViewController.swift"
+            timestampString = "533080994.599989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Pilares.SchoolSelectionViewController.viewDidLoad () -&gt; ()"
+                  symbolName = "Pilares.LoginViewController.__deallocating_deinit"
                   moduleName = "Pilares"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/SchoolSelectionViewController.swift"
-                  timestampString = "532399184.052357"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/LoginViewController.swift"
+                  timestampString = "533050595.897902"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "955">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Pilares.SchoolSelectionViewController.viewDidLoad () -&gt; ()"
+                  symbolName = "Pilares.LoginViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Pilares.LoginViewController"
                   moduleName = "Pilares"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/SchoolSelectionViewController.swift"
-                  timestampString = "532399184.060662"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/LoginViewController.swift"
+                  timestampString = "533050595.900002"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "1990">
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Pilares.LoginViewController"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/LoginViewController.swift"
+                  timestampString = "533050595.903232"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.LoginViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Pilares.LoginViewController&gt;"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/LoginViewController.swift"
+                  timestampString = "533050595.906216"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pilares.LoginViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;Pilares.LoginViewController&gt;"
+                  moduleName = "Pilares"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marianobonilla/Desktop/Pilares/Pilares/viewcontrollers/LoginViewController.swift"
+                  timestampString = "533050595.90931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "47">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pilares/viewcontrollers/LoginViewController.swift"
+            timestampString = "533080994.600081"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
