@@ -16,7 +16,7 @@ class AddToCartViewController: UIViewController {
     @IBOutlet weak var txtComments: UITextField!
     @IBOutlet weak var lblPrice: UILabel!
     
-    
+    var selectedDish: Dish?
     var aQty = 1
     
     @IBAction func btnSubstract(_ sender: UIButton) {
@@ -37,6 +37,20 @@ class AddToCartViewController: UIViewController {
         super.viewDidLoad()
 
        
+        if let thisImgDish = selectedDish?.imgUrl {
+            let url = URL(string: thisImgDish)
+            imgDish.kf.setImage(with: url)
+        }
+        
+        
+        if let thisDescDish = selectedDish?.description {
+            lblDishDescription.text = thisDescDish
+        }
+        
+        if let thisPriceDish = selectedDish?.price {
+            lblPrice.text = "$ " + String(thisPriceDish)
+        }
+        
     }
 
     @IBAction func btnAddToOrder(_ sender: UIButton) {

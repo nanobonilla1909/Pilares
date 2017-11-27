@@ -21,7 +21,6 @@
 		67CC5B591FC6FE5E006369F5 /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B581FC6FE5E006369F5 /* Shift.swift */; };
 		67CC5B5B1FC72723006369F5 /* CategoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B5A1FC72723006369F5 /* CategoriesManager.swift */; };
 		67CC5B5D1FC727BE006369F5 /* ShiftsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B5C1FC727BE006369F5 /* ShiftsManager.swift */; };
-		67CC5B5F1FC75288006369F5 /* Dish2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B5E1FC75288006369F5 /* Dish2ViewController.swift */; };
 		67CC5B9B1FCB887C006369F5 /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B9A1FCB887C006369F5 /* AddToCartViewController.swift */; };
 		67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767D1F93DE030068D38C /* AppDelegate.swift */; };
 		67F776801F93DE030068D38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767F1F93DE030068D38C /* ViewController.swift */; };
@@ -57,7 +56,6 @@
 		67CC5B581FC6FE5E006369F5 /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Shift.swift; path = model/Shift.swift; sourceTree = "<group>"; };
 		67CC5B5A1FC72723006369F5 /* CategoriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesManager.swift; sourceTree = "<group>"; };
 		67CC5B5C1FC727BE006369F5 /* ShiftsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShiftsManager.swift; path = model/ShiftsManager.swift; sourceTree = "<group>"; };
-		67CC5B5E1FC75288006369F5 /* Dish2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dish2ViewController.swift; path = viewcontrollers/Dish2ViewController.swift; sourceTree = "<group>"; };
 		67CC5B9A1FCB887C006369F5 /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddToCartViewController.swift; path = viewcontrollers/AddToCartViewController.swift; sourceTree = "<group>"; };
 		67F7767A1F93DE030068D38C /* Pilares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7767D1F93DE030068D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				67F776981F93E8390068D38C /* LoginViewController.swift */,
 				67F776C21F94E85D0068D38C /* DishesTableViewController.swift */,
 				67CC5B4E1FC621B7006369F5 /* LogueadoViewController.swift */,
-				67CC5B5E1FC75288006369F5 /* Dish2ViewController.swift */,
 				67CC5B9A1FCB887C006369F5 /* AddToCartViewController.swift */,
 			);
 			name = viewcontrollers;
@@ -331,7 +328,6 @@
 				67F776CB1F9776E50068D38C /* OrderManager.swift in Sources */,
 				67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */,
 				67CC5B531FC6FADC006369F5 /* UsersDAO.swift in Sources */,
-				67CC5B5F1FC75288006369F5 /* Dish2ViewController.swift in Sources */,
 				67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */,
 				67CC5B9B1FCB887C006369F5 /* AddToCartViewController.swift in Sources */,
 				67F776991F93E8390068D38C /* LoginViewController.swift in Sources */,

@@ -13,19 +13,19 @@ class DishesTableViewController: UITableViewController {
     var mainDishes: [Dish] = []
     var pruebaItems: [OrderItem] = []
    
-    // var mainOrder: OrderManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("ya se ejecuta el viewdidload de la tabla de platos ....... ")
-        let mainOrder = OrderManager.getInstance()
-        
-        let orderI1 = OrderItem(productId: 1, shiftId: 2, quantity: 23, comments: "sin sal")
-        
-        mainOrder.addItem(newItem: orderI1)
-        pruebaItems = mainOrder.getItems()
-        print(pruebaItems[0].comments)
+        self.title = "Menues"
+//        let mainOrder = OrderManager.getInstance()
+//
+//        let orderI1 = OrderItem(productId: 1, shiftId: 2, quantity: 23, comments: "sin sal")
+//
+//        mainOrder.addItem(newItem: orderI1)
+//        pruebaItems = mainOrder.getItems()
+//        print(pruebaItems[0].comments)
+//
         
         let dishesService = DishesService()
         dishesService.getDishesFromAPI(termine: {
@@ -64,15 +64,13 @@ class DishesTableViewController: UITableViewController {
     }
     
 
-   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if let dishDetailViewController = segue.destination as? AddToCartViewController, let indexPath = tableView.indexPathForSelectedRow {
+            let selectedDish = mainDishes[indexPath.row]
+            dishDetailViewController.selectedDish = selectedDish
+        }
+        
     }
-    */
 
 }
