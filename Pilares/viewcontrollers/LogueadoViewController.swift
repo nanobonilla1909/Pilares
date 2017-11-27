@@ -23,6 +23,34 @@ class LogueadoViewController: UIViewController {
         defaults.removeObject(forKey: "institute")
         defaults.removeObject(forKey: "authkey")
 
+        if let email = UserDefaults.standard.object(forKey: "email") as? String {
+            print("email: " + email)
+        } else {
+            print("No existe email en UserDefault")
+        }
+        
+        if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+            
+             print("name: " + aName)
+        } else {
+            print("No existe Name en UserDefault")
+        }
+        
+        if let aInst = UserDefaults.standard.object(forKey: "institute") as? Int {
+             print("email: " + String(aInst))
+        } else {
+            print("No existe Insitute en UserDefault")
+        }
+        
+        if let aKey = UserDefaults.standard.object(forKey: "authKey") as? Int {
+            print("KEY: " + String(aKey))
+        } else {
+            print("No existe KEY en UserDefault")
+        }
+        
+        
+        
+        
         
     }
     

@@ -86,31 +86,45 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         authService.getUserAuthFromAPI(termine: {
             auth in
             
-            print(auth.key)
-            
-            UserDefaults.standard.set(self.txtEmail.text, forKey: "email")
-            UserDefaults.standard.set(self.txtName.text, forKey: "name")
-            UserDefaults.standard.set(self.instituteIdSelected, forKey: "institute")
-            UserDefaults.standard.set(auth.key, forKey: "authkey")
-            
-            self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+            if let auth2 = auth {
+                print(auth2.key)
+                UserDefaults.standard.set(self.txtEmail.text, forKey: "email")
+                UserDefaults.standard.set(self.txtName.text, forKey: "name")
+                UserDefaults.standard.set(self.instituteIdSelected, forKey: "institute")
+                if let strKey = auth2.key {
+                    UserDefaults.standard.set(strKey, forKey: "authkey")
+                }
+                // UserDefaults.standard.set("12345678", forKey: "authkey")
+                
+                if let email = UserDefaults.standard.object(forKey: "email") as? String {
+                    print("email: " + email)
+                } else {
+                    print("No existe email en UserDefault")
+                }
+                
+                if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+                    
+                    print("name: " + aName)
+                } else {
+                    print("No existe Name en UserDefault")
+                }
+                
+                if let aInst = UserDefaults.standard.object(forKey: "institute") as? Int {
+                    print("InsituteId: " + String(aInst))
+                } else {
+                    print("No existe Insitute en UserDefault")
+                }
+                
+                if let aKey = UserDefaults.standard.object(forKey: "authkey") as? String {
+                    print("KEY: " + aKey)
+                } else {
+                    print("No existe KEY en UserDefault")
+                }
+                
+                self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+            }
             
         })
-        
-    }
-    
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-// ATT
-//        if let email = UserDefaults.standard.object(forKey: "email") as? String {
-//            lblEmail.text = email
-//        }
-//        
-//        if let aName = UserDefaults.standard.object(forKey: "name") as? String {
-//            lblName.text = aName
-//        }
-
         
     }
     

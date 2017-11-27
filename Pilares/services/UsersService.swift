@@ -13,7 +13,7 @@ class UsersService {
     
     var dictAuthentication = [String:Any]()
     
-    func getUserAuthFromAPI(termine: @escaping (Authentication)-> Void) -> Void {
+    func getUserAuthFromAPI(termine: @escaping (Authentication?)-> Void) -> Void {
         
         let userAuthDAO = UsersDAO()
         

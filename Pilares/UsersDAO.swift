@@ -16,34 +16,30 @@ class UsersDAO {
     var concatDate: String = ""
     
     
-    func getAuthenticationFromAPI(termine: @escaping (Authentication)->Void) -> Void {
+    func getAuthenticationFromAPI(termine: @escaping (Authentication?)->Void) -> Void {
         
         var params: [String: String] = [:]
         
         concatDate =  getSystemDateInString()
         params["C"] = getSystemDateInString()
-        params["U"] = "{'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}"
+        params["U"] = "{'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}" // .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx"
         
        // esta anda
-      let urltemp = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=201711231604&U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+      // let urltemp = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=201711241645&U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
        
-        // esta NO anda
-       // let urltemp: String? = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=" + concatDate + "U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        // esta anda
+       // let urltemp: String? = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=" + concatDate + "&U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        // esta NO anda (concatenando URLs)
-        // let url1 = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=" + concatDate + "U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}"
-        // let urltemp: String? = url1.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        // esta NO anda (sin el addingPercent)
-        // let urltemp: String? = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=" + concatDate + "U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}"
+        Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
         
-        Alamofire.request(urltemp!).responseJSON(completionHandler: {
             myResponse in
             if let value = myResponse.value as? [String: AnyObject] {
                 
                 var arrAuth: [Authentication] = []
+                var auth2 : Authentication?
                 var arrCategories: [DishCategory] = []
                 var arrShifts: [Shift] = []
                 
@@ -86,7 +82,7 @@ class UsersDAO {
                             
                             
                             let thisAuth = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
-                            
+                            auth2 = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
                             
                             arrAuth.append(thisAuth)
                         }
@@ -105,7 +101,7 @@ class UsersDAO {
 
                 }
                 
-                termine(arrAuth[0])
+                termine(auth2)
             }
         })
         
@@ -123,6 +119,7 @@ class UsersDAO {
         
         return String(year) + String(month) + String(day) + String(hour) + String(minutes)
         
+        // ATT - Arreglar que cuando es entre 1 y 9 minutos no agerga el 0 adelante
         
     }
     

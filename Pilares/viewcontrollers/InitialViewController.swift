@@ -39,13 +39,15 @@ class InitialViewController: UIViewController {
             mainInstituteList.addInstitute(newItem: Inst02)
             
             
-            if let email = UserDefaults.standard.object(forKey: "email"), let name = UserDefaults.standard.object(forKey: "name") {
+//            if let email = UserDefaults.standard.object(forKey: "email"), let name = UserDefaults.standard.object(forKey: "name") {
             
-                self.performSegue(withIdentifier: "toLogged", sender: self)
+            if UserDefaults.standard.object(forKey: "email") == nil {
+            
+                self.performSegue(withIdentifier: "toLogin", sender: self)
             
             } else {
                 
-                self.performSegue(withIdentifier: "toLogin", sender: self)
+                self.performSegue(withIdentifier: "toLogged", sender: self)
                 
             }
         })
