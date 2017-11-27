@@ -11,15 +11,19 @@ import Foundation
 public class OrderItem {
     
     var productId: Int?
-    var shiftId: Int?
+    var productDescription: String?
+    var productPrice: Double?
+    var productUrl: String?
     var quantity: Double?
     var comments: String?
     
     
-    public init(productId: Int, shiftId: Int, quantity:Double, comments:String) {
+    public init(productId: Int, productDescription: String, productPrice: Double, productUrl: String, quantity:Double, comments:String) {
         
         self.productId = productId
-        self.shiftId = shiftId
+        self.productDescription = productDescription
+        self.productPrice = productPrice
+        self.productUrl = productUrl
         self.quantity = quantity
         self.comments = comments
     }

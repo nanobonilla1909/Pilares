@@ -538,6 +538,9 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Finalizar Pedido"/>
+                                                <connections>
+                                                    <action selector="btnSubmitFinalOrder:" destination="05e-d3-yIn" eventType="touchUpInside" id="jWl-d3-baW"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqT-WZ-PGf">
                                                 <rect key="frame" x="71" y="472" width="108" height="45"/>
@@ -562,6 +565,9 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Borrar Lista"/>
+                                                <connections>
+                                                    <action selector="btnClerOrder:" destination="05e-d3-yIn" eventType="touchUpInside" id="lPS-qk-ZCK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-k8-bmI">
                                                 <rect key="frame" x="10" y="653" width="142" height="45"/>
@@ -572,15 +578,42 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Continuar Pedido"/>
+                                                <connections>
+                                                    <action selector="btnContinueBuying:" destination="05e-d3-yIn" eventType="touchUpInside" id="qfE-Wd-LGy"/>
+                                                </connections>
                                             </button>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="doy-n1-v2n">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="450" id="mqT-bl-9OP"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAddedDish" rowHeight="150" id="Xnx-Eq-Zzj">
+                                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xnx-Eq-Zzj" id="QqC-zW-Jeu" customClass="AddedDishTableViewCell" customModule="Pilares" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="05e-d3-yIn" id="Jeh-GE-R0q"/>
+                                                    <outlet property="delegate" destination="05e-d3-yIn" id="ewy-tP-7lH"/>
+                                                </connections>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="nwZ-Sa-FAy" secondAttribute="bottom" constant="30" id="984-Bu-kd5"/>
+                                            <constraint firstItem="doy-n1-v2n" firstAttribute="top" secondItem="vjh-rI-97y" secondAttribute="top" id="Adc-SF-7A9"/>
                                             <constraint firstItem="nwZ-Sa-FAy" firstAttribute="top" secondItem="0bW-Ou-xBr" secondAttribute="bottom" constant="22" id="M6a-CU-6wr"/>
                                             <constraint firstAttribute="trailing" secondItem="nwZ-Sa-FAy" secondAttribute="trailing" constant="10" id="SDO-uo-Xcb"/>
                                             <constraint firstItem="X2f-k8-bmI" firstAttribute="leading" secondItem="nwZ-Sa-FAy" secondAttribute="leading" id="SqD-pR-xGc"/>
+                                            <constraint firstItem="doy-n1-v2n" firstAttribute="leading" secondItem="vjh-rI-97y" secondAttribute="leading" id="Zre-sS-n77"/>
                                             <constraint firstItem="0bW-Ou-xBr" firstAttribute="trailing" secondItem="nwZ-Sa-FAy" secondAttribute="trailing" id="jli-co-Xn2"/>
+                                            <constraint firstAttribute="trailing" secondItem="doy-n1-v2n" secondAttribute="trailing" id="lAS-LR-BpK"/>
                                             <constraint firstItem="nwZ-Sa-FAy" firstAttribute="top" secondItem="X2f-k8-bmI" secondAttribute="bottom" constant="22" id="n5F-gz-Tj4"/>
                                             <constraint firstItem="0bW-Ou-xBr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X2f-k8-bmI" secondAttribute="trailing" constant="10" id="sv8-yb-WZQ"/>
                                             <constraint firstItem="nwZ-Sa-FAy" firstAttribute="leading" secondItem="vjh-rI-97y" secondAttribute="leading" constant="10" id="tXJ-Yr-e5K"/>
@@ -607,6 +640,10 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
+                    <connections>
+                        <outlet property="btnSubmitOrder" destination="nwZ-Sa-FAy" id="yRa-ih-pXd"/>
+                        <outlet property="lblTotal" destination="aYv-lc-pnO" id="bfw-p9-ZFu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJL-jv-Efi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

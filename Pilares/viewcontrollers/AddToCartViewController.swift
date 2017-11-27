@@ -51,9 +51,38 @@ class AddToCartViewController: UIViewController {
             lblPrice.text = "$ " + String(thisPriceDish)
         }
         
+       
+       
+
+
+        
     }
 
     @IBAction func btnAddToOrder(_ sender: UIButton) {
+        
+        if aQty > 0 {
+            if let aProductId = selectedDish?.id, let productDesciption = selectedDish?.description, let productPrice = selectedDish?.price, let productUrl = selectedDish?.imgUrl {
+                
+                var aComment: String = ""
+                if txtComments.text != nil {
+                    aComment = txtComments.text! // ATT
+                }
+                
+                let mainOrder = OrderManager.getInstance()
+                // let aOrderItem = OrderItem(productId: aProductId, productDescription:"", productPrice: 1, productUrl = "", quantity: Double(aQty), comments: aComment)
+                
+                let aOrderItem = OrderItem(productId: aProductId, productDescription: productDesciption, productPrice: productPrice, productUrl: productUrl, quantity: Double(aQty), comments: aComment)
+                
+                mainOrder.addItem(newItem: aOrderItem)
+                
+                
+            }
+        }
+        
+        
+        //
+        //        mainOrder.addItem(newItem: orderI1)
+        
     }
     
 

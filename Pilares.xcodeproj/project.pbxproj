@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		67406D3E1FBF37F800CD311C /* PilaresParam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67406D3D1FBF37F800CD311C /* PilaresParam.plist */; };
 		678CCD3F1FCC510900580875 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678CCD3E1FCC510900580875 /* OrderViewController.swift */; };
+		678CCD411FCCB0DE00580875 /* AddedDishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678CCD401FCCB0DE00580875 /* AddedDishTableViewCell.swift */; };
 		67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA28991FBBBA92001D7328 /* InsitutesManager.swift */; };
 		67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289B1FBBBB03001D7328 /* Institute.swift */; };
 		67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */; };
@@ -44,6 +45,7 @@
 		3F1DD1B2427C3A7C750226DB /* Pods-Pilares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilares.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pilares/Pods-Pilares.release.xcconfig"; sourceTree = "<group>"; };
 		67406D3D1FBF37F800CD311C /* PilaresParam.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PilaresParam.plist; sourceTree = "<group>"; };
 		678CCD3E1FCC510900580875 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderViewController.swift; path = viewcontrollers/OrderViewController.swift; sourceTree = "<group>"; };
+		678CCD401FCCB0DE00580875 /* AddedDishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddedDishTableViewCell.swift; path = views/AddedDishTableViewCell.swift; sourceTree = "<group>"; };
 		67AA28991FBBBA92001D7328 /* InsitutesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsitutesManager.swift; path = model/InsitutesManager.swift; sourceTree = "<group>"; };
 		67AA289B1FBBBB03001D7328 /* Institute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institute.swift; path = model/Institute.swift; sourceTree = "<group>"; };
 		67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesService.swift; path = services/InstitutesService.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				67F776C41F94EA5F0068D38C /* DishesTableViewCell.swift */,
+				678CCD401FCCB0DE00580875 /* AddedDishTableViewCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				678CCD3F1FCC510900580875 /* OrderViewController.swift in Sources */,
 				67CC5B4D1FC5BB8A006369F5 /* InitialViewController.swift in Sources */,
 				67AA28A01FBBBBAD001D7328 /* InstitutesDAO.swift in Sources */,
+				678CCD411FCCB0DE00580875 /* AddedDishTableViewCell.swift in Sources */,
 				67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
