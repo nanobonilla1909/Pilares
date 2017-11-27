@@ -451,6 +451,7 @@
                                                 <rect key="frame" x="82" y="754" width="238" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Agregar a Pedido"/>
                                                 <userDefinedRuntimeAttributes>
@@ -460,6 +461,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="btnAddToOrder:" destination="djF-yU-5nM" eventType="touchUpInside" id="4he-Fk-UeN"/>
+                                                    <segue destination="05e-d3-yIn" kind="show" id="Wey-ay-LWh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -508,6 +510,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cq8-xL-reB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4536" y="256.37181409295357"/>
+        </scene>
+        <!--Order View Controller-->
+        <scene sceneID="KBK-tI-F50">
+            <objects>
+                <viewController id="05e-d3-yIn" customClass="OrderViewController" customModule="Pilares" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h9Y-Zv-qTk"/>
+                        <viewControllerLayoutGuide type="bottom" id="41c-0b-to1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U2G-Wm-Syb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhM-pk-gtL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjh-rI-97y">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwZ-Sa-FAy">
+                                                <rect key="frame" x="10" y="720" width="355" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="g7J-O0-lhT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Finalizar Pedido"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqT-WZ-PGf">
+                                                <rect key="frame" x="71" y="472" width="108" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 70,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYv-lc-pnO">
+                                                <rect key="frame" x="200" y="472" width="112" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bW-Ou-xBr">
+                                                <rect key="frame" x="223" y="653" width="142" height="45"/>
+                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="neS-TY-k0V"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Borrar Lista"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2f-k8-bmI">
+                                                <rect key="frame" x="10" y="653" width="142" height="45"/>
+                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Xgl-ly-bLO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Continuar Pedido"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="nwZ-Sa-FAy" secondAttribute="bottom" constant="30" id="984-Bu-kd5"/>
+                                            <constraint firstItem="nwZ-Sa-FAy" firstAttribute="top" secondItem="0bW-Ou-xBr" secondAttribute="bottom" constant="22" id="M6a-CU-6wr"/>
+                                            <constraint firstAttribute="trailing" secondItem="nwZ-Sa-FAy" secondAttribute="trailing" constant="10" id="SDO-uo-Xcb"/>
+                                            <constraint firstItem="X2f-k8-bmI" firstAttribute="leading" secondItem="nwZ-Sa-FAy" secondAttribute="leading" id="SqD-pR-xGc"/>
+                                            <constraint firstItem="0bW-Ou-xBr" firstAttribute="trailing" secondItem="nwZ-Sa-FAy" secondAttribute="trailing" id="jli-co-Xn2"/>
+                                            <constraint firstItem="nwZ-Sa-FAy" firstAttribute="top" secondItem="X2f-k8-bmI" secondAttribute="bottom" constant="22" id="n5F-gz-Tj4"/>
+                                            <constraint firstItem="0bW-Ou-xBr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X2f-k8-bmI" secondAttribute="trailing" constant="10" id="sv8-yb-WZQ"/>
+                                            <constraint firstItem="nwZ-Sa-FAy" firstAttribute="leading" secondItem="vjh-rI-97y" secondAttribute="leading" constant="10" id="tXJ-Yr-e5K"/>
+                                            <constraint firstAttribute="height" constant="800" id="w3u-2z-hn2"/>
+                                            <constraint firstItem="0bW-Ou-xBr" firstAttribute="width" secondItem="X2f-k8-bmI" secondAttribute="width" id="yhM-p4-VUz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vjh-rI-97y" firstAttribute="leading" secondItem="uhM-pk-gtL" secondAttribute="leading" id="Hu9-Kj-J4q"/>
+                                    <constraint firstAttribute="trailing" secondItem="vjh-rI-97y" secondAttribute="trailing" id="OKg-b0-cSH"/>
+                                    <constraint firstAttribute="bottom" secondItem="vjh-rI-97y" secondAttribute="bottom" id="Szv-AX-3r0"/>
+                                    <constraint firstItem="vjh-rI-97y" firstAttribute="top" secondItem="uhM-pk-gtL" secondAttribute="top" id="Vv2-ib-4CU"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="41c-0b-to1" firstAttribute="top" secondItem="uhM-pk-gtL" secondAttribute="bottom" id="9kT-ZW-gk9"/>
+                            <constraint firstAttribute="trailing" secondItem="uhM-pk-gtL" secondAttribute="trailing" id="Oua-2Z-O4d"/>
+                            <constraint firstItem="vjh-rI-97y" firstAttribute="width" secondItem="U2G-Wm-Syb" secondAttribute="width" id="Tmz-E6-KUI"/>
+                            <constraint firstItem="uhM-pk-gtL" firstAttribute="top" secondItem="U2G-Wm-Syb" secondAttribute="top" id="rbb-R7-nPi"/>
+                            <constraint firstItem="uhM-pk-gtL" firstAttribute="leading" secondItem="U2G-Wm-Syb" secondAttribute="leading" id="wIP-eC-Vh2"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJL-jv-Efi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5344.8000000000002" y="228.48575712143929"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b6q-EA-t1o">

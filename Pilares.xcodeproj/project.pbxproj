@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67406D3E1FBF37F800CD311C /* PilaresParam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67406D3D1FBF37F800CD311C /* PilaresParam.plist */; };
+		678CCD3F1FCC510900580875 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678CCD3E1FCC510900580875 /* OrderViewController.swift */; };
 		67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA28991FBBBA92001D7328 /* InsitutesManager.swift */; };
 		67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289B1FBBBB03001D7328 /* Institute.swift */; };
 		67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */; };
@@ -23,7 +24,6 @@
 		67CC5B5D1FC727BE006369F5 /* ShiftsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B5C1FC727BE006369F5 /* ShiftsManager.swift */; };
 		67CC5B9B1FCB887C006369F5 /* AddToCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B9A1FCB887C006369F5 /* AddToCartViewController.swift */; };
 		67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767D1F93DE030068D38C /* AppDelegate.swift */; };
-		67F776801F93DE030068D38C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F7767F1F93DE030068D38C /* ViewController.swift */; };
 		67F776831F93DE030068D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F776811F93DE030068D38C /* Main.storyboard */; };
 		67F776861F93DE030068D38C /* Pilares.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67F776841F93DE030068D38C /* Pilares.xcdatamodeld */; };
 		67F776881F93DE030068D38C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F776871F93DE030068D38C /* Assets.xcassets */; };
@@ -43,6 +43,7 @@
 		097909B448EE1C1DDD7A3CEE /* Pods_Pilares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1DD1B2427C3A7C750226DB /* Pods-Pilares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilares.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pilares/Pods-Pilares.release.xcconfig"; sourceTree = "<group>"; };
 		67406D3D1FBF37F800CD311C /* PilaresParam.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PilaresParam.plist; sourceTree = "<group>"; };
+		678CCD3E1FCC510900580875 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderViewController.swift; path = viewcontrollers/OrderViewController.swift; sourceTree = "<group>"; };
 		67AA28991FBBBA92001D7328 /* InsitutesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsitutesManager.swift; path = model/InsitutesManager.swift; sourceTree = "<group>"; };
 		67AA289B1FBBBB03001D7328 /* Institute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institute.swift; path = model/Institute.swift; sourceTree = "<group>"; };
 		67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesService.swift; path = services/InstitutesService.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		67CC5B9A1FCB887C006369F5 /* AddToCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddToCartViewController.swift; path = viewcontrollers/AddToCartViewController.swift; sourceTree = "<group>"; };
 		67F7767A1F93DE030068D38C /* Pilares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pilares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7767D1F93DE030068D38C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67F7767F1F93DE030068D38C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		67F776821F93DE030068D38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67F776851F93DE030068D38C /* Pilares.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pilares.xcdatamodel; sourceTree = "<group>"; };
 		67F776871F93DE030068D38C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +123,6 @@
 				67F776921F93DF0E0068D38C /* viewcontrollers */,
 				67F776951F93DF2F0068D38C /* views */,
 				67F7767D1F93DE030068D38C /* AppDelegate.swift */,
-				67F7767F1F93DE030068D38C /* ViewController.swift */,
 				67F776811F93DE030068D38C /* Main.storyboard */,
 				67F776871F93DE030068D38C /* Assets.xcassets */,
 				67F776891F93DE030068D38C /* LaunchScreen.storyboard */,
@@ -142,6 +141,7 @@
 				67F776C21F94E85D0068D38C /* DishesTableViewController.swift */,
 				67CC5B4E1FC621B7006369F5 /* LogueadoViewController.swift */,
 				67CC5B9A1FCB887C006369F5 /* AddToCartViewController.swift */,
+				678CCD3E1FCC510900580875 /* OrderViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -338,7 +338,6 @@
 				67F776C91F9684420068D38C /* OrderItem.swift in Sources */,
 				67F776BC1F94D4010068D38C /* Dish.swift in Sources */,
 				67AA289A1FBBBA92001D7328 /* InsitutesManager.swift in Sources */,
-				67F776801F93DE030068D38C /* ViewController.swift in Sources */,
 				67CC5B5D1FC727BE006369F5 /* ShiftsManager.swift in Sources */,
 				67F776C11F94E4B20068D38C /* DishesDAO.swift in Sources */,
 				67CC5B511FC6F7AA006369F5 /* UsersService.swift in Sources */,
@@ -347,6 +346,7 @@
 				67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */,
 				67CC5B591FC6FE5E006369F5 /* Shift.swift in Sources */,
 				67F776C31F94E85D0068D38C /* DishesTableViewController.swift in Sources */,
+				678CCD3F1FCC510900580875 /* OrderViewController.swift in Sources */,
 				67CC5B4D1FC5BB8A006369F5 /* InitialViewController.swift in Sources */,
 				67AA28A01FBBBBAD001D7328 /* InstitutesDAO.swift in Sources */,
 				67F7767E1F93DE030068D38C /* AppDelegate.swift in Sources */,
