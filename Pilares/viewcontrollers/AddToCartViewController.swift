@@ -13,6 +13,8 @@ class AddToCartViewController: UIViewController {
     @IBOutlet weak var imgDish: UIImageView!
     @IBOutlet weak var lblDishDescription: UILabel!
     @IBOutlet weak var lblQuantity: UILabel!
+    @IBOutlet weak var txtComments: UITextField!
+    @IBOutlet weak var lblPrice: UILabel!
     
     
     var aQty = 1
@@ -37,6 +39,8 @@ class AddToCartViewController: UIViewController {
        
     }
 
-   
+    @IBAction func btnAddToOrder(_ sender: UIButton) {
+    }
+    
 
 }
