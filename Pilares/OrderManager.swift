@@ -10,12 +10,7 @@ import Foundation
 
 public class OrderManager {
     
-    
-//    IdUsuario: En que momento lo obtengo?
-//    IdInstitucion: OK
-//    IdLocalPorEmpresa: ???
-//    Dia y Hora del Pedido: OK
-//    IdHorario: Horario que va a retirar el pedido OK
+
     
     private var items: [OrderItem] = []
     
@@ -31,8 +26,7 @@ public class OrderManager {
     
     
     public func addItem(newItem: OrderItem) {
-        //crea order item
-        // agregar order item a items
+
         self.items.append(newItem)
     }
     
@@ -41,5 +35,14 @@ public class OrderManager {
         return self.items
         
     }
+    
+    public func deleteItems() {
+        
+        self.items = []
+        
+        return
+        
+    }
+    
     
 }

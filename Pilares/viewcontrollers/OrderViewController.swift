@@ -59,11 +59,46 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    @IBAction func btnContinueBuying(_ sender: UIButton) {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            
+            if editingStyle == .delete {
+                
+            }
+            self.orderItems.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+            
+            // self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    
+    
+    
+    @IBAction func btnContinueBuying(_ sender: UIButton) {
+        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+    }
+    
+    
     
     @IBAction func btnClerOrder(_ sender: Any) {
     
+        let mainOrder = OrderManager.getInstance()
+        mainOrder.deleteItems()
+        
+        
+        // Aca tengo que recargar la tabla!!!
+        
     }
     
     
