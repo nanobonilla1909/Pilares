@@ -71,7 +71,7 @@ class AddToCartViewController: UIViewController {
                 let mainOrder = OrderManager.getInstance()
                 // let aOrderItem = OrderItem(productId: aProductId, productDescription:"", productPrice: 1, productUrl = "", quantity: Double(aQty), comments: aComment)
                 
-                let aOrderItem = OrderItem(productId: aProductId, productDescription: productDesciption, productPrice: productPrice, productUrl: productUrl, quantity: Double(aQty), comments: aComment)
+                let aOrderItem = OrderItem(productId: aProductId, productDescription: productDesciption, productPrice: productPrice, productUrl: productUrl, quantity: Int(aQty), comments: aComment)
                 
                 mainOrder.addItem(newItem: aOrderItem)
                 

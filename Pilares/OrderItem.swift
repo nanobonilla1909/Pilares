@@ -14,11 +14,11 @@ public class OrderItem {
     var productDescription: String?
     var productPrice: Double?
     var productUrl: String?
-    var quantity: Double?
+    var quantity: Int?
     var comments: String?
     
     
-    public init(productId: Int, productDescription: String, productPrice: Double, productUrl: String, quantity:Double, comments:String) {
+    public init(productId: Int, productDescription: String, productPrice: Double, productUrl: String, quantity:Int, comments:String) {
         
         self.productId = productId
         self.productDescription = productDescription

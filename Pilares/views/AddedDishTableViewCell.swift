@@ -10,15 +10,47 @@ import UIKit
 
 class AddedDishTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var imgAddedDish: UIImageView!
+    @IBOutlet weak var lblAddedDishDescription: UILabel!
+    @IBOutlet weak var lblAddedDishUnitPrice: UILabel!
+    @IBOutlet weak var lblAddedDishQuantity: UILabel!
+    @IBOutlet weak var lblAddedDishTotalPrice: UILabel!
+//
+//    var productId: Int?
+//    var comments: String?
+    
+    func setupAddedDish(aOrderItem: OrderItem){
+        
+        var unitPrice: Double = 0
+        var unitQty: Int = 0
+        var totalPrice: Double = 0
+        
+        if let thisImgAddedDish = aOrderItem.productUrl {
+            let url = URL(string: thisImgAddedDish)
+            imgAddedDish.kf.setImage(with: url)
+        }
+        
+        if let thisAddedDishDescription = aOrderItem.productDescription {
+            lblAddedDishDescription.text = thisAddedDishDescription
+        }
+        
+        
+        if let thisAddedDishPrice = aOrderItem.productPrice {
+            lblAddedDishUnitPrice.text = String(thisAddedDishPrice)
+            unitPrice = thisAddedDishPrice
+        }
+        
+        if let thisAddedDishQuantity = aOrderItem.quantity {
+            lblAddedDishQuantity.text = String(thisAddedDishQuantity)
+            unitQty = thisAddedDishQuantity
+        }
+        
+        totalPrice = unitPrice * Double(unitQty)
+        lblAddedDishTotalPrice.text = String(totalPrice)
+        
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
