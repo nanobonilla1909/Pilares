@@ -35,7 +35,7 @@ class DishesTableViewCell: UITableViewCell {
         }
         
         if let thisPriceDish = aDish.price {
-            priceDish.text = String(thisPriceDish)
+            priceDish.text = String(format: "%.2f", thisPriceDish)
         }
 
         

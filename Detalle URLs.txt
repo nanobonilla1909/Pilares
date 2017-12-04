@@ -1,0 +1,55 @@
+
+URL Autenticacion
+
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/activacionGet.ashx?C=201711170943&U={%27Correo%27:%27pablosym@yahoo.com%27,%27Nombre%27:%27Pablo%20el%20capo%27,%27IdInstitucion%27:1}
+
+
+
+URL Configuracion
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/ConfiguracionGet.ashx?KEY=1|1|2|201711162055
+
+donde Key es la Key devuelta por la activacion
+
+La configuracion devuelve una Key con la fecha actualizada, que deberia pisar la anterior y ser usada para el resto de los pasos
+
+
+
+URL Menues Get
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/MenuesGet.ashx?KEY=1|1|2|201711162055
+
+
+
+
+
+
+
+
+
+Pedidos Set - Esta Funciona Bien con el Horario como Parámetro
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosSet.ashx?key=1|1|2|201711162055&H=2&P=[{%22IdMenu%22:%221%22,%22Precio%22:%2299%22,%22Cantidad%22:%221%22,%22Observacion%22:%22sin%20mayonesa%22}]
+
+
+
+
+Pedidos Set - Esta Funciona Bien con el Horario como Parámetro sin Porcentajes
+
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosSet.ashx?key=1|1|2|201711162055&H=2&P=[{"IdMenu":"1","Precio":"99","Cantidad":"1","Observacion":"sin mayonesa"}]
+
+
+Pedidos Delete
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosAnularSet.ashx?key=1|1|2|201711162055&P=20
+
+
+
+Pedidos Get
+
+
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosGet.ashx?KEY=1|1|2|201711162055
+
+

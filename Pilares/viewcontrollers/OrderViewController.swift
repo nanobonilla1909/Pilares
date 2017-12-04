@@ -11,10 +11,13 @@ import UIKit
 class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
+    @IBOutlet weak var orderTableView: UITableView!
     @IBOutlet weak var lblTotal: UILabel!
     var orderItems: [OrderItem] = []
     var totalOrder: Double = 0
     var totalPriceByDish: Double = 0
+    var totalItemToRemove: Double = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +33,11 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-        lblTotal.text = String(totalOrder)
+        lblTotal.text = String(format: "%.2f", totalOrder)
         let a = 1
+        
+        
+        
     }
     
     
@@ -66,22 +72,32 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("Deleted")
-            
+         
             if editingStyle == .delete {
                 
             }
+            
+            if let aTotalItemToRemove = orderItems[indexPath.row].productPrice, let aQuantity = orderItems[indexPath.row].quantity {
+                 totalItemToRemove = aTotalItemToRemove * Double(aQuantity)
+            }
+           
+            totalOrder = totalOrder - totalItemToRemove
+            lblTotal.text = String(format: "%.2f", totalOrder)
+            
             self.orderItems.remove(at: indexPath.row)
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
             
-            // self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            let mainOrder = OrderManager.getInstance()
+            mainOrder.deleteOneItem(index: indexPath.row)
+            
+            
+     
         }
     }
     
-    
-    
+
     
     @IBAction func btnContinueBuying(_ sender: UIButton) {
         
@@ -95,8 +111,11 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
         let mainOrder = OrderManager.getInstance()
         mainOrder.deleteItems()
+        orderItems = []
+        totalOrder = 0
+        lblTotal.text = String(format: "%.2f", totalOrder)
         
-        
+        orderTableView.reloadData()
         // Aca tengo que recargar la tabla!!!
         
     }
@@ -104,7 +123,23 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var btnSubmitOrder: UIButton!
     
+    
+    
     @IBAction func btnSubmitFinalOrder(_ sender: UIButton) {
+        
+        
+        // Graba el Pedido
+        
+        let ordersService = OrdersService()
+        ordersService.setOrderWithAPI(termine: {
+            idOrder in
+            
+            print("en el form de submit order vino: " + idOrder)
+        })
+        
+        
+        
+        
     }
     
     

@@ -45,4 +45,12 @@ public class OrderManager {
     }
     
     
+    public func deleteOneItem(index: Int) {
+        
+        self.items.remove(at: index)
+        
+        return
+        
+    }
+    
 }

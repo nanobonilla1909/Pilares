@@ -26,12 +26,6 @@ class UsersDAO {
         
         let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx"
         
-       // esta anda
-      // let urltemp = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=201711241645&U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-       
-        // esta anda
-       // let urltemp: String? = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx?C=" + concatDate + "&U={'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
         
         Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
         
@@ -81,10 +75,10 @@ class UsersDAO {
                             }
                             
                             
-                            let thisAuth = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
+                            // let thisAuth = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
                             auth2 = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
                             
-                            arrAuth.append(thisAuth)
+                            // arrAuth.append(thisAuth)
                         }
                     }
                     
@@ -117,7 +111,7 @@ class UsersDAO {
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         
-        return String(year) + String(month) + String(day) + String(hour) + String(minutes)
+        return String(year) + String(format:"%02d", month) + String(format:"%02d", day) + String(format:"%02d", hour) + String(format:"%02d", minutes)
         
         // ATT - Arreglar que cuando es entre 1 y 9 minutos no agerga el 0 adelante
         

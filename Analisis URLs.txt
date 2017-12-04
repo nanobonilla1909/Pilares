@@ -15,4 +15,6 @@ key=1&P=[{IdProducto:1,IdHorario:2,Cantidad:1,Observacion: 'sin mayonesa},
 
 URL Sin Porcentajes todo junto y nro de Pedido cambiado
 
-http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosSet.ashx?key=1&P=[{IdProducto:100,IdHorario:2,Cantidad:1,Observacion: 'sin mayonesa'},{IdProducto:200,dHorario:3,Cantidad:2,Observacion:''},{IdProducto:300,IdHorario:4,Cantidad:3,Observacion:'sin lechuga'}]
+http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/PedidosSet.ashx?key=1&P=[{IdProducto:100,IdHorario:2,Cantidad:1,Observacion: 'sin mayonesa'},{IdProducto:200,IdHorario:3,Cantidad:2,Observacion:''},{IdProducto:300,IdHorario:4,Cantidad:3,Observacion:'sin lechuga'}]
+
+strKey	String	"81|1|2|201711231219"	
