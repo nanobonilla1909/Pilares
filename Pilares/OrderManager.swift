@@ -11,7 +11,8 @@ import Foundation
 public class OrderManager {
     
 
-    
+    public var name: String?
+    public var shiftId: Shift?
     private var items: [OrderItem] = []
     
     private init() {}

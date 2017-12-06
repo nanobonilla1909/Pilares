@@ -17,7 +17,15 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var totalOrder: Double = 0
     var totalPriceByDish: Double = 0
     var totalItemToRemove: Double = 0
+    var orderName: String = ""
+    var orderShift: String = ""
     
+    
+    // Variables del PopUp View
+    
+    @IBOutlet weak var lblOrderId: UILabel!
+    @IBOutlet weak var centerPopUpConstraint: NSLayoutConstraint!
+    @IBOutlet weak var lblName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +38,11 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 totalPriceByDish = aProductPrice * Double(aQuantity)
                 totalOrder = totalOrder + totalPriceByDish
             }
-            
         }
         
         lblTotal.text = String(format: "%.2f", totalOrder)
-        let a = 1
         
+        // mainOrder.shiftId = "2"
         
         
     }
@@ -72,10 +79,6 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-         
-            if editingStyle == .delete {
-                
-            }
             
             if let aTotalItemToRemove = orderItems[indexPath.row].productPrice, let aQuantity = orderItems[indexPath.row].quantity {
                  totalItemToRemove = aTotalItemToRemove * Double(aQuantity)
@@ -128,13 +131,28 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func btnSubmitFinalOrder(_ sender: UIButton) {
         
         
-        // Graba el Pedido
+//        centerPopUpConstraint.constant = 0
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.view.layoutIfNeeded()
+//        })
         
+        let mainOrder = OrderManager.getInstance()
         let ordersService = OrdersService()
-        ordersService.setOrderWithAPI(termine: {
+        ordersService.setOrderWithAPI(myOrder: mainOrder, termine: {
             idOrder in
+
+            print("En el OrderViewController:")
+            print(idOrder)
             
-            print("en el form de submit order vino: " + idOrder)
+            self.lblOrderId.text = idOrder
+            if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+                self.lblName.text = aName
+            }
+            self.centerPopUpConstraint.constant = 0
+            UIView.animate(withDuration: 0.3, animations: {
+                        self.view.layoutIfNeeded()
+                    })
+
         })
         
         
@@ -142,5 +160,11 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    @IBAction func btnPopUpAccepted(_ sender: UIButton) {
+        
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+        
+    }
     
 }

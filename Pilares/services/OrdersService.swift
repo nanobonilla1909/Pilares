@@ -13,13 +13,13 @@ import Alamofire
 class OrdersService {
     
     
-    func setOrderWithAPI(termine: @escaping (String)-> Void) -> Void {
+    func setOrderWithAPI(myOrder: OrderManager, termine: @escaping (String)-> Void) -> Void {
         
         let ordersDAO = OrdersDAO()
         
         if let networkManager = NetworkReachabilityManager(), networkManager.isReachable {
             
-            ordersDAO.setOrderWithAPI(termine: { (idOrder) in
+            ordersDAO.setOrderWithAPI(myOrder: myOrder, termine: { (idOrder) in
                 termine(idOrder)
             })
             
@@ -29,4 +29,25 @@ class OrdersService {
             
         }
     }
+    
+    
+    func getOrderListFromAPI(userKey: String, termine: @escaping ([Order])-> Void) -> Void {
+        
+        let ordersDAO = OrdersDAO()
+        
+        if let networkManager = NetworkReachabilityManager(), networkManager.isReachable {
+            
+            ordersDAO.getOrderListFromAPI(userKey: userKey, termine: { (ordersArray) in
+                termine(ordersArray)
+            })
+            
+        } else {
+            
+            let ordersArray:[Order] = []
+            termine(ordersArray)
+            
+        }
+    }
+    
+    
 }

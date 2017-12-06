@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class DishesTableViewController: UITableViewController {
 
@@ -17,15 +18,13 @@ class DishesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SideMenuManager.menuWidth = view.frame.width * CGFloat(0.50)
+        let menuPresentMode = SideMenuManager.MenuPresentMode.viewSlideInOut
+        SideMenuManager.menuPresentMode = menuPresentMode
+        
+        
         self.title = "Menues"
-//        let mainOrder = OrderManager.getInstance()
-//
-//        let orderI1 = OrderItem(productId: 1, shiftId: 2, quantity: 23, comments: "sin sal")
-//
-//        mainOrder.addItem(newItem: orderI1)
-//        pruebaItems = mainOrder.getItems()
-//        print(pruebaItems[0].comments)
-//
+
         
         let dishesService = DishesService()
         dishesService.getDishesFromAPI(termine: {
@@ -35,7 +34,7 @@ class DishesTableViewController: UITableViewController {
             self.tableView.reloadData()
             
         })
-           }
+    }
 
     
 

@@ -48,7 +48,7 @@ class AddToCartViewController: UIViewController {
         }
         
         if let thisPriceDish = selectedDish?.price {
-            lblPrice.text = "$ " + String(thisPriceDish)
+            lblPrice.text = "$ " + String(format: "%.2f", thisPriceDish)
         }
         
        
