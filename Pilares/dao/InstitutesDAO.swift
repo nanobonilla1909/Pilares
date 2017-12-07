@@ -13,11 +13,32 @@ import Alamofire
 
 class InstitutesDAO {
     
+    var handler:String = ""
+    
+    public init() {
+        
+        // Lee plist de parametros
+        
+        if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
+            let dictRoot = NSDictionary(contentsOfFile: path)
+            if let dict = dictRoot {
+                self.handler = dict["handler"] as! String
+            }
+        }
+    }
+    
     func getInstitutesFromAPI(termine: @escaping ([Institute])->Void) -> Void {
         
-        let urltemp = "http://weminipocket.weoneconsulting.com/handlers/Institucionesget.ashx?key=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        // asi funciona 7-12
+        //        let urltemp = "http://weminipocket.weoneconsulting.com/handlers/Institucionesget.ashx?key=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        //
+
+        var params: [String: Any] = [:]
+        params["key"] = 1
+        let urltemp = handler + "/Institucionesget.ashx"
         
-        Alamofire.request(urltemp!).responseJSON(completionHandler: {
+        
+        Alamofire.request(urltemp, parameters: params).responseJSON(completionHandler: {
             myResponse in
             if let value = myResponse.value as? [String: AnyObject] {
                 

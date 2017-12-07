@@ -64,12 +64,29 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if editingStyle == .delete {
             
+            if let orderToDelete = arrOrders[indexPath.row].id {
+                
+                
+                let ordersService = OrdersService()
+                ordersService.deleteOrderWithAPI(idOrder: orderToDelete, termine: {
+                    thisStatus in
+                    
+                    if thisStatus == "OK" {
+                        self.arrOrders.remove(at: indexPath.row)
+                        tableView.beginUpdates()
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                        tableView.endUpdates()
+                    }
+                    
+                    
+                })
+                
+                
+                
+                
+            }
             
             
-            self.arrOrders.remove(at: indexPath.row)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
             
         }
     }

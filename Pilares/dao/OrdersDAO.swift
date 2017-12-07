@@ -102,25 +102,9 @@ class OrdersDAO {
         
         let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/PedidosGet.ashx"
         
-        // let urltemp = "http://weminipocket.weoneconsulting.com/handlers/Institucionesget.ashx?key=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
         Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
             myResponse in
             if let value = myResponse.value as? [String: AnyObject] {
-                
-                print("----------------------------")
-                print("Este es el Request")
-                print("----------------------------")
-                print("Request: \(String(describing: myResponse.request))")   // original url request
-                print("----------------------------")
-                print("Este es el Response")
-                print("----------------------------")
-                print("Response: \(String(describing: myResponse.response))") // http url response
-                print("----------------------------")
-                print("Este es el Result")
-                print("----------------------------")
-                print("Result: \(myResponse.result)")                         // response serialization result
-                
                 
                 var ordersArray: [Order] = []
                 var idOrder: Int = 0
@@ -146,6 +130,54 @@ class OrdersDAO {
                     
                 }
                 termine(ordersArray)
+            }
+        })
+        
+    }
+    
+    
+    func deleteOrderWithAPI(idOrder: Int, termine: @escaping (String)->Void) -> Void {
+        
+        var params: [String: Any] = [:]
+        // ATT CAMBIAR POR EL USER DEFAULT EN TODOSSSSS LOS SERVICIOS
+        params["key"] = "1|1|2|201711162055" // CAMBIAR POR EL USER DEFAULT EN TODOSSSSS LOS SERVICIOS
+        params["P"] = idOrder
+ 
+        let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/PedidosAnularSet.ashx"
+        
+        Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
+            myResponse in
+            if let value = myResponse.value as? [String: AnyObject] {
+                
+                
+                print("----------------------------")
+                print("Este es el Request")
+                print("----------------------------")
+                print("Request: \(String(describing: myResponse.request))")   // original url request
+                print("----------------------------")
+                print("Este es el Response")
+                print("----------------------------")
+                print("Response: \(String(describing: myResponse.response))") // http url response
+                print("----------------------------")
+                print("Este es el Result")
+                print("----------------------------")
+                print("Result: \(myResponse.result)")                         // response serialization result
+                
+                print("----------------------------")
+                print("Este es el Value")
+                print("----------------------------")
+                print("Result: \(myResponse.value)")
+                
+                var thisStatus: String = ""
+                
+                if let dictData = value["Message"] as? [String: String] {
+                    
+                    if let aStatus = dictData["status"] {
+                        thisStatus = aStatus
+                    }
+                }
+                
+                termine(thisStatus)
             }
         })
         

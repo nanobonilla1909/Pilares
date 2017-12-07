@@ -18,10 +18,11 @@ class DishesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+   
+        
         SideMenuManager.menuWidth = view.frame.width * CGFloat(0.50)
         let menuPresentMode = SideMenuManager.MenuPresentMode.viewSlideInOut
         SideMenuManager.menuPresentMode = menuPresentMode
-        
         
         self.title = "Menues"
 

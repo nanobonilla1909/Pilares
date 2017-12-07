@@ -39,7 +39,7 @@ class InitialViewController: UIViewController {
             mainInstituteList.addInstitute(newItem: Inst02)
             
             
-            if UserDefaults.standard.object(forKey: "email") == nil {
+            if UserDefaults.standard.object(forKey: "authKey") == nil {
             
                 self.performSegue(withIdentifier: "toLogin", sender: self)
             

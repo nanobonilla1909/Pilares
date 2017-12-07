@@ -13,10 +13,45 @@ import Alamofire
 
 class DishesDAO {
     
+    var key: String = ""
+    var handler:String = ""
+    
+    public init() {
+        
+        if let aKey = UserDefaults.standard.object(forKey: "authkey") as? String {
+            self.key = aKey
+        } else {
+            self.key = "error"
+        }
+        
+        if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
+            let dictRoot = NSDictionary(contentsOfFile: path)
+            if let dict = dictRoot {
+                self.handler = dict["handler"] as! String
+            } else {
+                self.handler = "error"
+            }
+        }
+    }
+    
     
     func getDishesFromAPI(termine: @escaping ([Dish])->Void) -> Void {
         
-       let urltemp = "http://weminipocket.weoneconsulting.com/handlers/menuesget.ashx?key=69|2|1|201710111843".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        if self.handler != "error" && self.key != "error" {
+            
+            
+            
+            
+        }
+        
+        // Esta URL funciona
+//       let urltemp = "http://weminipocket.weoneconsulting.com/handlers/menuesget.ashx?key=69|2|1|201710111843".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        
+        
+        let urltemp = "http://weminipocket.weoneconsulting.com/handlers/menuesget.ashx?key=69|2|1|201710111843".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+
         
         Alamofire.request(urltemp!).responseJSON(completionHandler: {
             myResponse in

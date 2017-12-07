@@ -31,6 +31,22 @@ class OrdersService {
     }
     
     
+    func deleteOrderWithAPI(idOrder: Int, termine: @escaping (String)-> Void) -> Void {
+        
+        let ordersDAO = OrdersDAO()
+        
+        if let networkManager = NetworkReachabilityManager(), networkManager.isReachable {
+            
+            ordersDAO.deleteOrderWithAPI(idOrder: idOrder, termine: { (thisStatus) in
+                termine(thisStatus)
+            })
+            
+        } else {
+            
+        }
+    }
+    
+    
     func getOrderListFromAPI(userKey: String, termine: @escaping ([Order])-> Void) -> Void {
         
         let ordersDAO = OrdersDAO()

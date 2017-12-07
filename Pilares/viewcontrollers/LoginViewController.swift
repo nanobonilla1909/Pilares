@@ -94,7 +94,7 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                 if let strKey = auth2.key {
                     UserDefaults.standard.set(strKey, forKey: "authkey")
                 }
-                // UserDefaults.standard.set("12345678", forKey: "authkey")
+        
                 
                 if let email = UserDefaults.standard.object(forKey: "email") as? String {
                     print("email: " + email)
