@@ -30,13 +30,18 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Pedido"
+        
         
         let mainOrder = OrderManager.getInstance()
         orderItems = mainOrder.getItems()
-        for i in 0...orderItems.count-1 {
-            if let aProductPrice = orderItems[i].productPrice, let aQuantity = orderItems[i].quantity {
-                totalPriceByDish = aProductPrice * Double(aQuantity)
-                totalOrder = totalOrder + totalPriceByDish
+        if orderItems.count > 0 {
+            
+            for i in 0...orderItems.count-1 {
+                if let aProductPrice = orderItems[i].productPrice, let aQuantity = orderItems[i].quantity {
+                    totalPriceByDish = aProductPrice * Double(aQuantity)
+                    totalOrder = totalOrder + totalPriceByDish
+                }
             }
         }
         
@@ -104,22 +109,40 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func btnContinueBuying(_ sender: UIButton) {
         
+        var inStackVCs: Int = 0
+        
+//        if let viewControllers = navigationController?.viewControllers {
+//            inStackVCs = viewControllers.count
+//        }
+        
+        
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+        inStackVCs = viewControllers.count
+        if inStackVCs > 2 {
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+        } else {
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true);
+        }
+        
     }
-    
     
     
     @IBAction func btnClerOrder(_ sender: Any) {
     
-        let mainOrder = OrderManager.getInstance()
-        mainOrder.deleteItems()
-        orderItems = []
-        totalOrder = 0
-        lblTotal.text = String(format: "%.2f", totalOrder)
+        if orderItems.count > 0 {
+            
+            let mainOrder = OrderManager.getInstance()
+            mainOrder.resetOrder()
+            
+            orderItems = []
+            totalOrder = 0
+            lblTotal.text = String(format: "%.2f", totalOrder)
+            
+            orderTableView.reloadData()
+            // Aca tengo que recargar la tabla!!!
+            
+        }
         
-        orderTableView.reloadData()
-        // Aca tengo que recargar la tabla!!!
         
     }
     
@@ -130,35 +153,31 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func btnSubmitFinalOrder(_ sender: UIButton) {
         
-        
-//        centerPopUpConstraint.constant = 0
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.view.layoutIfNeeded()
-//        })
-        
-        let mainOrder = OrderManager.getInstance()
-        let ordersService = OrdersService()
-        ordersService.setOrderWithAPI(myOrder: mainOrder, termine: {
-            idOrder in
-
-            print("En el OrderViewController:")
-            print(idOrder)
+        if self.orderItems.count > 0 {
             
-            self.lblOrderId.text = idOrder
-            if let aName = UserDefaults.standard.object(forKey: "name") as? String {
-                self.lblName.text = aName
-            }
-            self.centerPopUpConstraint.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {
-                        self.view.layoutIfNeeded()
-                    })
-
-        })
-        
-        
-        
-        
+            let mainOrder = OrderManager.getInstance()
+            let ordersService = OrdersService()
+            ordersService.setOrderWithAPI(myOrder: mainOrder, termine: {
+                idOrder in
+                
+                
+                self.lblOrderId.text = idOrder
+                if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+                    self.lblName.text = aName
+                }
+                self.centerPopUpConstraint.constant = 0
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.view.layoutIfNeeded()
+                })
+                
+                mainOrder.resetOrder()
+                self.totalOrder = 0
+                
+            })
+            
+        }        
     }
+    
     
     @IBAction func btnPopUpAccepted(_ sender: UIButton) {
         

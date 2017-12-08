@@ -11,7 +11,6 @@ import UIKit
 class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var arrOrders: [Order] = []
-    var thisUserKey = "1|1|2|201711162055"
     
     @IBOutlet weak var ordersTable: UITableView!
     
@@ -19,7 +18,7 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
 
         let orderService = OrdersService()
-        orderService.getOrderListFromAPI(userKey: thisUserKey, termine: {
+        orderService.getOrderListFromAPI(termine: {
             ordersArray in
             
             self.arrOrders = ordersArray

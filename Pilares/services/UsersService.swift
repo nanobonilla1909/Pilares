@@ -13,13 +13,13 @@ class UsersService {
     
     var dictAuthentication = [String:Any]()
     
-    func getUserAuthFromAPI(termine: @escaping (Authentication?)-> Void) -> Void {
+    func getUserAuthFromAPI(aMail: String, aName: String, aInst: Int, termine: @escaping (Authentication?)-> Void) -> Void {
         
         let userAuthDAO = UsersDAO()
         
         if let networkManager = NetworkReachabilityManager(), networkManager.isReachable {
             
-            userAuthDAO.getAuthenticationFromAPI(termine: { (thisAuth) in
+            userAuthDAO.getAuthenticationFromAPI(aMail: aMail, aName: aName, aInst: aInst, termine: { (thisAuth) in
                 termine(thisAuth)
             })
             

@@ -83,48 +83,38 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         // Ejecuta la Autenticacion
         
         let authService = UsersService()
-        authService.getUserAuthFromAPI(termine: {
-            auth in
+        if let inputMail = self.txtEmail.text, let inputMailConf = self.txtEmailConf.text, let inputName = self.txtName.text {
             
-            if let auth2 = auth {
-                print(auth2.key)
-                UserDefaults.standard.set(self.txtEmail.text, forKey: "email")
-                UserDefaults.standard.set(self.txtName.text, forKey: "name")
-                UserDefaults.standard.set(self.instituteIdSelected, forKey: "institute")
-                if let strKey = auth2.key {
-                    UserDefaults.standard.set(strKey, forKey: "authkey")
-                }
-        
+            if inputMail != "" && inputMailConf != "" && inputName != "" && instituteIdSelected != 0 {
                 
-                if let email = UserDefaults.standard.object(forKey: "email") as? String {
-                    print("email: " + email)
-                } else {
-                    print("No existe email en UserDefault")
-                }
-                
-                if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+                if inputMail == inputMailConf {
                     
-                    print("name: " + aName)
+                    authService.getUserAuthFromAPI(aMail: inputMail, aName: inputName, aInst: instituteIdSelected, termine: {
+                        auth in
+                        
+                        if let auth2 = auth {
+                            
+                            UserDefaults.standard.set(self.txtEmail.text, forKey: "email")
+                            UserDefaults.standard.set(self.txtName.text, forKey: "name")
+                            UserDefaults.standard.set(self.instituteIdSelected, forKey: "institute")
+                            if let strKey = auth2.key {
+                                UserDefaults.standard.set(strKey, forKey: "authkey")
+                            }
+                            
+                            self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+                        }
+                        
+                    })
+                    
                 } else {
-                    print("No existe Name en UserDefault")
+                    print("Mail 1 y Mail 2 deben ser iguales")
                 }
                 
-                if let aInst = UserDefaults.standard.object(forKey: "institute") as? Int {
-                    print("InsituteId: " + String(aInst))
-                } else {
-                    print("No existe Insitute en UserDefault")
-                }
-                
-                if let aKey = UserDefaults.standard.object(forKey: "authkey") as? String {
-                    print("KEY: " + aKey)
-                } else {
-                    print("No existe KEY en UserDefault")
-                }
-                
-                self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+            } else {
+                print("complete todos los campos")
             }
             
-        })
+        }
         
     }
     

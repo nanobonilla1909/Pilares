@@ -14,23 +14,60 @@ import Alamofire
 class UsersDAO {
     
     var concatDate: String = ""
+    var handler:String = ""
     
+    public init() {
+        
+        // Lee plist de parametros
+        
+        if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
+            let dictRoot = NSDictionary(contentsOfFile: path)
+            if let dict = dictRoot {
+                self.handler = dict["handler"] as! String
+            }
+        }
+    }
     
-    func getAuthenticationFromAPI(termine: @escaping (Authentication?)->Void) -> Void {
+    func getAuthenticationFromAPI(aMail: String, aName: String, aInst: Int, termine: @escaping (Authentication?)->Void) -> Void {
         
         var params: [String: String] = [:]
+        var myU: String = ""
         
-        concatDate =  getSystemDateInString()
         params["C"] = getSystemDateInString()
-        params["U"] = "{'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}" // .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/activacionGet.ashx"
+        // params["U"] = "{'Correo':'mb2@yahoo.com','Nombre':'Mariano','IdInstitucion':1}" //
+        myU = "{'Correo':'" + aMail
+        myU = myU + "','Nombre':'" + aName
+        myU = myU + "','IdInstitucion': \(aInst)}"
         
+        params["U"] = myU
+        
+        let thisUrl = self.handler + "/activacionGet.ashx"
         
         Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
         
             myResponse in
             if let value = myResponse.value as? [String: AnyObject] {
+                
+                
+                print("----------------------------")
+                print("Este es el Request")
+                print("----------------------------")
+                print("Request: \(String(describing: myResponse.request))")   // original url request
+                print("----------------------------")
+                print("Este es el Response")
+                print("----------------------------")
+                print("Response: \(String(describing: myResponse.response))") // http url response
+                print("----------------------------")
+                print("Este es el Result")
+                print("----------------------------")
+                print("Result: \(myResponse.result)")                         // response serialization result
+                
+                print("----------------------------")
+                print("Este es el Value")
+                print("----------------------------")
+                print("Result: \(myResponse.value)")
+                
                 
                 var arrAuth: [Authentication] = []
                 var auth2 : Authentication?
@@ -74,24 +111,10 @@ class UsersDAO {
                                 }
                             }
                             
-                            
-                            // let thisAuth = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
                             auth2 = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
                             
-                            // arrAuth.append(thisAuth)
                         }
                     }
-                    
-                    // lee las categorias y crea la instancia de CategoriesManager
-                    
-                    if let dictCategories = dictData["Categorias"] {
-                        
-                        
-                            
-                        
-                    }
-                    
-                    
 
                 }
                 

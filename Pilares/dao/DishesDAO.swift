@@ -40,62 +40,63 @@ class DishesDAO {
         
         if self.handler != "error" && self.key != "error" {
             
+            // Esta URL funciona
+            //       let urltemp = "http://weminipocket.weoneconsulting.com/handlers/menuesget.ashx?key=69|2|1|201710111843".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
             
+            var params: [String: String] = [:]
+            params["key"] = self.key
+            
+            let urltemp = self.handler + "/menuesget.ashx"
+            
+            
+            Alamofire.request(urltemp, parameters: params).responseJSON(completionHandler: {
+                myResponse in
+                if let value = myResponse.value as? [String: AnyObject] {
+                    
+                    var dishesArray: [Dish] = []
+                    var idDish: Int = 0
+                    var promoDish: String = ""
+                    var descriptionDish: String = ""
+                    var priceDish: Double = 0
+                    var urlDish: String = ""
+                    
+                    if let arrayData = value["data"] as? [[String: AnyObject]] {
+                        
+                        for dishesDictionary in arrayData {
+                            
+                            if let idMenu = dishesDictionary["IdMenu"] as? Int {
+                                idDish = idMenu
+                            }
+                            if let price = dishesDictionary["Precio"] as? Double {
+                                priceDish = price
+                            }
+                            if let promo = dishesDictionary["Promo"] as? String {
+                                promoDish = promo
+                            }
+                            if let description = dishesDictionary["Descripcion"] as? String {
+                                descriptionDish = description
+                            }
+                            if let aUrl = dishesDictionary["ImgFileName"] as? String {
+                                urlDish = aUrl
+                            }
+                            
+                            
+                            let aDish = Dish(id: idDish, description: descriptionDish, price: priceDish, promo: promoDish, imgUrl: urlDish)
+                            
+                            dishesArray.append(aDish)
+                            
+                        }
+                        
+                    }
+                    termine(dishesArray)
+                }
+            })
+
             
             
         }
         
-        // Esta URL funciona
-//       let urltemp = "http://weminipocket.weoneconsulting.com/handlers/menuesget.ashx?key=69|2|1|201710111843".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        
-        
-        
-        let urltemp = "http://weminipocket.weoneconsulting.com/handlers/menuesget.ashx?key=69|2|1|201710111843".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-
-        
-        Alamofire.request(urltemp!).responseJSON(completionHandler: {
-            myResponse in
-            if let value = myResponse.value as? [String: AnyObject] {
-                
-                var dishesArray: [Dish] = []
-                var idDish: Int = 0
-                var promoDish: String = ""
-                var descriptionDish: String = ""
-                var priceDish: Double = 0
-                var urlDish: String = ""
-                
-                if let arrayData = value["data"] as? [[String: AnyObject]] {
-                    
-                    for dishesDictionary in arrayData {
-                        
-                        if let idMenu = dishesDictionary["idMenu"] as? Int {
-                            idDish = idMenu
-                        }
-                        if let price = dishesDictionary["Precio"] as? Double {
-                            priceDish = price
-                        }
-                        if let promo = dishesDictionary["Promo"] as? String {
-                            promoDish = promo
-                        }
-                        if let description = dishesDictionary["Descripcion"] as? String {
-                            descriptionDish = description
-                        }
-                        if let aUrl = dishesDictionary["ImgFileName"] as? String {
-                            urlDish = aUrl
-                        }
-                        
-                        
-                        let aDish = Dish(id: idDish, description: descriptionDish, price: priceDish, promo: promoDish, imgUrl: urlDish)
-                        
-                        dishesArray.append(aDish)
-                        
-                    }
-
-                }
-                termine(dishesArray)
-            }
-        })
-
+       
     }
 
 }

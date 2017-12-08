@@ -25,7 +25,7 @@ class DishesTableViewController: UITableViewController {
         SideMenuManager.menuPresentMode = menuPresentMode
         
         self.title = "Menues"
-
+        
         
         let dishesService = DishesService()
         dishesService.getDishesFromAPI(termine: {
@@ -38,8 +38,26 @@ class DishesTableViewController: UITableViewController {
     }
 
     
-
-    // MARK: - Table view data source
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(false)
+//        
+//        print("----------------")
+//        print("aca van los VCs")
+//        print(Date())
+//        print("----------------")
+//        if let viewControllers = navigationController?.viewControllers {
+//            print("Cantidad en el Stack: \(viewControllers.count)" )
+//            for viewController in viewControllers {
+//                print("Yo: ")
+//                print(viewController.navigationItem)
+//                print("Padre: ")
+//                print(viewController.parent?.navigationItem)
+//            }
+//           
+//        }
+//    }
+    
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

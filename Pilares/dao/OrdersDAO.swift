@@ -13,94 +13,149 @@ import Alamofire
 
 class OrdersDAO {
     
-    func setOrderWithAPI(myOrder: OrderManager, termine: @escaping (String)->Void) -> Void {
+    var key: String = ""
+    var handler:String = ""
+    
+    
+    public init() {
         
-        let orderItems = myOrder.getItems()
-        for i in 0...orderItems.count-1 {
-            print(orderItems[i].productDescription)
-            print(orderItems[i].productPrice)
-            print(orderItems[i].quantity)
-            
+        if let aKey = UserDefaults.standard.object(forKey: "authkey") as? String {
+            self.key = aKey
+        } else {
+            self.key = "error"
         }
         
-        
-        let miMenu1 = 1
-        let miPrecio1 = 99
-        let miCant1: Int = 1
-        let miComment1 = "sin mayonesa"
-        
-        let myP = "[{'IdMenu':'" + String(miMenu1) + "','Precio':'" + String(miPrecio1) + "','Cantidad':'" + String(miCant1) + "','Observacion':'" + miComment1 + "'}]"
-        print(myP)
-        
-        
-        var params: [String: Any] = [:]
-        
-        params["key"] = "1|1|2|201711162055"
-        params["H"] = "2"
-        params["P"] = "[{'IdMenu':'1','Precio':'99','Cantidad':'1', 'Observacion':'sin mayonesa'}, {'IdMenu':'2','Precio':'66','Cantidad':'2', 'Observacion':'sin lechuga'}]"
-        
-        
-        
-        params["P"] = myP
-        
-        let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/PedidosSet.ashx"
-       
-       
-        Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
-            response in
-            if let value = response.value as? [String: AnyObject] {
-                
-                print("----------------------------")
-                print("Este es el Request")
-                print("----------------------------")
-                print("Request: \(String(describing: response.request))")   // original url request
-                print("----------------------------")
-                print("Este es el Response")
-                print("----------------------------")
-                print("Response: \(String(describing: response.response))") // http url response
-                print("----------------------------")
-                print("Este es el Result")
-                print("----------------------------")
-                print("Result: \(response.result)")                         // response serialization result
-                
-                if let json = response.result.value {
-                    print("JSON: \(json)") // serialized json response
-                }
-                
-                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                    print("Data: \(utf8Text)") // original server data as UTF8 string
-                }
-                
-                
-                var idOrder: String = ""
-               
-                
-                  if let dictData = value["Message"] as? [String: String] {
-
-                    if let theStatus = dictData["status"] {
-                        if theStatus != "OK" {
-                            idOrder = "ERROR"
-                        } else {
-                            if let theOrder = dictData["value"]{
-                                idOrder = theOrder
-                            }
-                        }
-                    }
-
-                }
-                termine(idOrder)
+        if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
+            let dictRoot = NSDictionary(contentsOfFile: path)
+            if let dict = dictRoot {
+                self.handler = dict["handler"] as! String
+            } else {
+                self.handler = "error"
             }
-        })
-        
+        }
     }
     
     
-    func getOrderListFromAPI(userKey: String, termine: @escaping ([Order])->Void) -> Void {
+    
+    func setOrderWithAPI(myOrder: OrderManager, termine: @escaping (String)->Void) -> Void {
+        
+        var myP: String = ""
+        
+        if self.handler != "error" && self.key != "error" {
+            
+            let orderItems = myOrder.getItems()
+            for i in 0...orderItems.count-1 {
+                
+                var strThisProductId: String = ""
+                var strThisPrice: String = ""
+                var strThisQuantity: String = ""
+                var aComment:String = ""
+                
+                if let thisProductId = orderItems[i].productId {
+                    strThisProductId = "\(thisProductId)"
+                }
+                
+                if let thisProductPrice = orderItems[i].productPrice {
+                    strThisPrice = "\(thisProductPrice)"
+                }
+                
+                if let thisQuantity = orderItems[i].quantity {
+                    strThisQuantity = "\(thisQuantity)"
+                }
+                
+                if strThisProductId != "" && strThisPrice != "" && strThisQuantity != "" {
+                    
+                    if i == 0 {
+                        myP = myP + "["
+                    } else {
+                        myP = myP + ","
+                    }
+                    
+                    myP = myP + "{'IdMenu':'" + strThisProductId
+                    myP = myP + "','Precio':'" + strThisPrice
+                    myP = myP + "','Cantidad':'" + strThisQuantity
+                    if let thisComment = orderItems[i].comments {
+                        aComment = thisComment
+                    }
+                    myP = myP + "','Observacion':'" + aComment + "'}"
+                    
+                    if i == orderItems.count-1 {
+                        myP = myP + "]"
+                    }
+                    
+                }
+            }
+            // Este funciona ATT
+            //            let miMenu1 = 1
+            //            let miPrecio1 = 99
+            //            let miCant1: Int = 1
+            //            let miComment1 = "sin mayonesa"
+            //
+            //            let myP = "[{'IdMenu':'" + String(miMenu1) + "','Precio':'" + String(miPrecio1) + "','Cantidad':'" + String(miCant1) + "','Observacion':'" + miComment1 + "'}]"
+            //            print(myP)
+            
+            
+            var params: [String: Any] = [:]
+            
+            params["key"] = self.key
+            params["H"] = "2" // ATT Cambiar x el horario real
+            params["P"] = myP
+            
+            let thisUrl = self.handler + "/PedidosSet.ashx"
+                
+                
+            Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
+                response in
+                if let value = response.value as? [String: AnyObject] {
+                    
+                    print("----------------------------")
+                    print("Este es el Request")
+                    print("----------------------------")
+                    print("Request: \(String(describing: response.request))")   // original url request
+                    print("----------------------------")
+                    print("Este es el Response")
+                    print("----------------------------")
+                    print("Response: \(String(describing: response.response))") // http url response
+                    print("----------------------------")
+                    print("Este es el Result")
+                    print("----------------------------")
+                    print("Result: \(response.result)")                         // response serialization result
+                    
+                    if let json = response.result.value {
+                        print("JSON: \(json)") // serialized json response
+                    }
+                    
+                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                        print("Data: \(utf8Text)") // original server data as UTF8 string
+                    }
+                    
+                    var idOrder: String = ""
+                    
+                    if let dictData = value["Message"] as? [String: String] {
+                        
+                        if let theStatus = dictData["status"] {
+                            if theStatus != "OK" {
+                                idOrder = "ERROR"
+                            } else {
+                                if let theOrder = dictData["value"]{
+                                    idOrder = theOrder
+                                }
+                            }
+                        }
+                    }
+                    termine(idOrder)
+                }
+            })
+        }
+    }
+    
+    
+    func getOrderListFromAPI(termine: @escaping ([Order])->Void) -> Void {
         
         var params: [String: Any] = [:]
-        params["key"] = userKey
+        params["key"] = self.key
         
-        let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/PedidosGet.ashx"
+        let thisUrl = self.handler + "/PedidosGet.ashx"
         
         Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
             myResponse in
@@ -139,11 +194,11 @@ class OrdersDAO {
     func deleteOrderWithAPI(idOrder: Int, termine: @escaping (String)->Void) -> Void {
         
         var params: [String: Any] = [:]
-        // ATT CAMBIAR POR EL USER DEFAULT EN TODOSSSSS LOS SERVICIOS
-        params["key"] = "1|1|2|201711162055" // CAMBIAR POR EL USER DEFAULT EN TODOSSSSS LOS SERVICIOS
+        
+        params["key"] = self.key
         params["P"] = idOrder
  
-        let thisUrl = "http://weminipocket.weoneconsulting.com/handlers/PedidosAnularSet.ashx"
+        let thisUrl = self.handler + "/PedidosAnularSet.ashx"
         
         Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
             myResponse in

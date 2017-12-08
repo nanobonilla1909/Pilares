@@ -37,6 +37,8 @@ class AddToCartViewController: UIViewController {
         super.viewDidLoad()
 
        
+        self.title = "Plato"
+        
         if let thisImgDish = selectedDish?.imgUrl {
             let url = URL(string: thisImgDish)
             imgDish.kf.setImage(with: url)
@@ -51,13 +53,10 @@ class AddToCartViewController: UIViewController {
             lblPrice.text = "$ " + String(format: "%.2f", thisPriceDish)
         }
         
-       
-       
-
-
-        
     }
 
+    
+    
     @IBAction func btnAddToOrder(_ sender: UIButton) {
         
         if aQty > 0 {
@@ -69,7 +68,6 @@ class AddToCartViewController: UIViewController {
                 }
                 
                 let mainOrder = OrderManager.getInstance()
-                // let aOrderItem = OrderItem(productId: aProductId, productDescription:"", productPrice: 1, productUrl = "", quantity: Double(aQty), comments: aComment)
                 
                 let aOrderItem = OrderItem(productId: aProductId, productDescription: productDesciption, productPrice: productPrice, productUrl: productUrl, quantity: Int(aQty), comments: aComment)
                 
@@ -78,10 +76,6 @@ class AddToCartViewController: UIViewController {
                 
             }
         }
-        
-        
-        //
-        //        mainOrder.addItem(newItem: orderI1)
         
     }
     

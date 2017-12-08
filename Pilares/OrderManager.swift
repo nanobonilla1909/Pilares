@@ -26,6 +26,14 @@ public class OrderManager {
     }
     
     
+    public func resetOrder() {
+        
+        self.name = nil
+        self.shiftId = nil
+        self.deleteItems()
+        
+    }
+    
     public func addItem(newItem: OrderItem) {
 
         self.items.append(newItem)

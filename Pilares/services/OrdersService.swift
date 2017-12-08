@@ -47,13 +47,13 @@ class OrdersService {
     }
     
     
-    func getOrderListFromAPI(userKey: String, termine: @escaping ([Order])-> Void) -> Void {
+    func getOrderListFromAPI(termine: @escaping ([Order])-> Void) -> Void {
         
         let ordersDAO = OrdersDAO()
         
         if let networkManager = NetworkReachabilityManager(), networkManager.isReachable {
             
-            ordersDAO.getOrderListFromAPI(userKey: userKey, termine: { (ordersArray) in
+            ordersDAO.getOrderListFromAPI(termine: { (ordersArray) in
                 termine(ordersArray)
             })
             
