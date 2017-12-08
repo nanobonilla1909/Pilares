@@ -69,7 +69,6 @@ class UsersDAO {
                 print("Result: \(myResponse.value)")
                 
                 
-                var arrAuth: [Authentication] = []
                 var auth2 : Authentication?
                 var arrCategories: [DishCategory] = []
                 var arrShifts: [Shift] = []

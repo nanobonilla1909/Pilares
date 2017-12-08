@@ -10,20 +10,24 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
+    
+    @IBOutlet weak var myActivityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        myActivityIndicator.startAnimating()
         
-     
-        
-        // Lee plist de parametros
-        
-        if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
-            let dictRoot = NSDictionary(contentsOfFile: path)
-            if let dict = dictRoot {
-                debugPrint(dict["handler"] as! String)
-            }
-        }
+//     ATT
+//        
+//        // Lee plist de parametros
+//        
+//        if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
+//            let dictRoot = NSDictionary(contentsOfFile: path)
+//            if let dict = dictRoot {
+//                debugPrint(dict["handler"] as! String)
+//            }
+//        }
         
         // Carga los Institutos y solo cuando termino paso a la pantalla de Login
         

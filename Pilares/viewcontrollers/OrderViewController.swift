@@ -110,12 +110,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func btnContinueBuying(_ sender: UIButton) {
         
         var inStackVCs: Int = 0
-        
-//        if let viewControllers = navigationController?.viewControllers {
-//            inStackVCs = viewControllers.count
-//        }
-        
-        
+ 
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
         inStackVCs = viewControllers.count
         if inStackVCs > 2 {
@@ -181,8 +176,18 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func btnPopUpAccepted(_ sender: UIButton) {
         
+        var inStackVCs: Int = 0
+        
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+        inStackVCs = viewControllers.count
+        if inStackVCs > 2 {
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+        } else {
+            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true);
+        }
+        
+//        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
+//        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
         
     }
     

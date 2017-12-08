@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var lblSelectedSchool: UILabel!
     @IBOutlet weak var pckSchool: UIPickerView!
+    @IBOutlet weak var lblMessages: UILabel!
     
     
     var arrInstitutesStr:[String] = []
@@ -102,16 +103,22 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                             }
                             
                             self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+                        } else {
+                            
+                            self.lblMessages.isHidden = false
+                            self.lblMessages.text = "Datos de Login Incorrectos"
                         }
                         
                     })
                     
                 } else {
-                    print("Mail 1 y Mail 2 deben ser iguales")
+                    self.lblMessages.isHidden = false
+                    self.lblMessages.text = "Los dos mails deben ser Iguales"
                 }
                 
             } else {
-                print("complete todos los campos")
+                self.lblMessages.isHidden = false
+                self.lblMessages.text = "complete todos los campos"
             }
             
         }
