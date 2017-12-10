@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtEmailConf: UITextField!
     @IBOutlet weak var txtName: UITextField!
+    
     @IBOutlet weak var lblSelectedSchool: UILabel!
     @IBOutlet weak var pckSchool: UIPickerView!
     @IBOutlet weak var lblMessages: UILabel!
@@ -27,7 +28,7 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        lblMessages.isHidden = true
         let managerInstituteList = InstitutesManager.getInstance()
         var mainInstituteList = managerInstituteList.getInstitutes()
         
