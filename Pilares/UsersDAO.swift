@@ -49,6 +49,75 @@ class UsersDAO {
             myResponse in
             if let value = myResponse.value as? [String: AnyObject] {
                 
+                var auth2 : Authentication?
+                var arrCategories: [DishCategory] = []
+                var arrShifts: [Shift] = []
+                
+                if let dictData = value["data"] as? [String: AnyObject] {
+                    
+                    // lee la clave de Autenticacion que retorna la API
+                    if let dictKey = dictData["KEY"] {
+                        if let strKey = dictKey as? String {
+                            
+                            if let dictCategories = dictData["Categorias"] as? [[String: AnyObject]] {
+                                
+                                let mainCategoryList = CategoriesManager.getInstance()
+                                
+                                for category in dictCategories {
+                                    
+                                    if let idCat = category["IdCategoria"] as? Int, let descCat = category["Categoria"] as? String {
+                                        let aCategory = DishCategory(id: idCat, description: descCat)
+                                        arrCategories.append(aCategory)
+                                        mainCategoryList.addCategory(newItem: aCategory)
+                                    }
+                                    
+                                }
+                            }
+                            
+                            if let dictShifts = dictData["Horarios"] as? [[String: AnyObject]] {
+                                
+                                let mainShiftList = ShiftsManager.getInstance()
+                                
+                                for shift in dictShifts {
+                                    
+                                    if let idShift = shift["IdHorario"] as? Int, let descShift = shift["Horario"] as? String {
+                                        let aShift = Shift(id: idShift, description: descShift)
+                                        arrShifts.append(aShift)
+                                        mainShiftList.addShift(newItem: aShift)
+                                    
+                                    }
+                                    
+                                }
+                            }
+                            
+                            auth2 = Authentication(key: strKey, shifts: arrShifts, categories: arrCategories)
+                            
+                        }
+                    }
+
+                }
+                
+                termine(auth2)
+            }
+        })
+        
+    }
+    
+    
+    func getConfigurationFromAPI(aKey: String, termine: @escaping (Authentication?)->Void) -> Void {
+        
+        var params: [String: Any] = [:]
+        
+        // params["KEY"] = aKey.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        params["key"] = "1|1|2|201711162055"
+
+        let thisUrl = self.handler + "/ConfigurationGet.ashx"
+        
+        Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
+            
+            myResponse in
+            if let value = myResponse.value as? [String: AnyObject] {
+                
                 
                 print("----------------------------")
                 print("Este es el Request")
@@ -104,7 +173,7 @@ class UsersDAO {
                                         let aShift = Shift(id: idShift, description: descShift)
                                         arrShifts.append(aShift)
                                         mainShiftList.addShift(newItem: aShift)
-                                    
+                                        
                                     }
                                     
                                 }
@@ -114,7 +183,7 @@ class UsersDAO {
                             
                         }
                     }
-
+                    
                 }
                 
                 termine(auth2)
@@ -135,7 +204,6 @@ class UsersDAO {
         
         return String(year) + String(format:"%02d", month) + String(format:"%02d", day) + String(format:"%02d", hour) + String(format:"%02d", minutes)
         
-        // ATT - Arreglar que cuando es entre 1 y 9 minutos no agerga el 0 adelante
         
     }
     

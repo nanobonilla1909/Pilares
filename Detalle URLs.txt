@@ -10,6 +10,9 @@ URL Configuracion
 
 http://www.weminipocket.weoneconsulting.com/weminipocket/handlers/ConfiguracionGet.ashx?KEY=1|1|2|201711162055
 
+http://www.weminipocket.weoneconsulting.com/handlers/ConfigurationGet.ashx?KEY=85%7C2%7C1%7C201712100953
+
+
 donde Key es la Key devuelta por la activacion
 
 La configuracion devuelve una Key con la fecha actualizada, que deberia pisar la anterior y ser usada para el resto de los pasos

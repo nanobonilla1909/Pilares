@@ -24,6 +24,10 @@ class DishesTableViewController: UITableViewController {
         let menuPresentMode = SideMenuManager.MenuPresentMode.viewSlideInOut
         SideMenuManager.menuPresentMode = menuPresentMode
         
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.violet
         self.title = "Menues"
         
         

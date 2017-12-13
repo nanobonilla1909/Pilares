@@ -11,14 +11,18 @@ import UIKit
 class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
+    @IBOutlet weak var pckShifts: UIPickerView!
     @IBOutlet weak var orderTableView: UITableView!
     @IBOutlet weak var lblTotal: UILabel!
     var orderItems: [OrderItem] = []
+    var allShifts: [Shift] = []
     var totalOrder: Double = 0
     var totalPriceByDish: Double = 0
     var totalItemToRemove: Double = 0
     var orderName: String = ""
     var orderShift: String = ""
+    var arrShiftsStr:[String] = []
+    var arrShiftsId:[Int] = []
     
     
     // Variables del PopUp View
@@ -31,6 +35,24 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
 
         self.title = "Pedido"
+        
+        self.navigationItem.setHidesBackButton(true, animated:true)
+        
+        // Rescata los horarios
+        
+        let mainShift = ShiftsManager.getInstance()
+        allShifts = mainShift.getShifts()
+        var txtShift: String = ""
+        
+        for aShift in allShifts {
+            
+            if let idShift = aShift.id, let nameShift = aShift.description {
+                txtShift = String(idShift) + " - " + nameShift
+                arrShiftsStr.append(txtShift)
+                arrShiftsId.append(idShift)
+            }
+            
+        }
         
         
         let mainOrder = OrderManager.getInstance()
@@ -72,9 +94,9 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.0
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 150.0
+//    }
     
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -156,14 +178,14 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 idOrder in
                 
                 
-                self.lblOrderId.text = idOrder
-                if let aName = UserDefaults.standard.object(forKey: "name") as? String {
-                    self.lblName.text = aName
-                }
-                self.centerPopUpConstraint.constant = 0
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.view.layoutIfNeeded()
-                })
+//                self.lblOrderId.text = idOrder
+//                if let aName = UserDefaults.standard.object(forKey: "name") as? String {
+//                    self.lblName.text = aName
+//                }
+//                self.centerPopUpConstraint.constant = 0
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    self.view.layoutIfNeeded()
+//                })
                 
                 mainOrder.resetOrder()
                 self.totalOrder = 0
@@ -190,5 +212,28 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
         
     }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return allShifts[row].description
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return allShifts.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        // lblSelectedSchool.text = arrInstitutesStr[row]
+        // instituteIdSelected = arrInstitutesId[row]
+    }
+    
     
 }

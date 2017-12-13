@@ -36,8 +36,8 @@ class AddToCartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        self.title = "Plato"
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        // self.title = "Pilares"
         
         if let thisImgDish = selectedDish?.imgUrl {
             let url = URL(string: thisImgDish)

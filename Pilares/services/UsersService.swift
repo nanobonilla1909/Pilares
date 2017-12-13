@@ -30,4 +30,23 @@ class UsersService {
             
         }
     }
+    
+    
+    
+    func getConfigurationFromAPI(aKey: String, termine: @escaping (Authentication?)-> Void) -> Void {
+        
+        let userAuthDAO = UsersDAO()
+        
+        if let networkManager = NetworkReachabilityManager(), networkManager.isReachable {
+            
+            userAuthDAO.getConfigurationFromAPI(aKey: aKey, termine: { (thisAuth) in
+                termine(thisAuth)
+            })
+            
+        } else {
+            
+        }
+    }
+    
+    
 }

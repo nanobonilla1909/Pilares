@@ -18,16 +18,6 @@ class InitialViewController: UIViewController {
 
         myActivityIndicator.startAnimating()
         
-//     ATT
-//        
-//        // Lee plist de parametros
-//        
-//        if let path = Bundle.main.path(forResource: "PilaresParam", ofType: "plist") {
-//            let dictRoot = NSDictionary(contentsOfFile: path)
-//            if let dict = dictRoot {
-//                debugPrint(dict["handler"] as! String)
-//            }
-//        }
         
         // Carga los Institutos y solo cuando termino paso a la pantalla de Login
         
@@ -68,13 +58,48 @@ class InitialViewController: UIViewController {
             
             } else {
                 
-                self.performSegue(withIdentifier: "toLogged", sender: self)
+                
+                // Ejecuta la Autenticacion
+                
+                if let thisKey = UserDefaults.standard.object(forKey: "authkey") as? String {
+                    
+                    let authService = UsersService()
+                    authService.getConfigurationFromAPI(aKey: thisKey, termine: {
+                        auth in
+                        
+                        if let auth2 = auth {
+                            
+                            self.setShiftsAndCategories(thisAuth: auth2)
+                            self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+                            
+                        } else {
+                            
+                           // ATT Catchear el error
+                        }
+                        
+                    })
+                    
+                    self.performSegue(withIdentifier: "toLogged", sender: self)
+                    
+                }
                 
             }
         })
         
         
     }
-
     
+    
+    func setShiftsAndCategories (thisAuth: Authentication) {
+        
+        let mainShiftList = ShiftsManager.getInstance()
+        if let theseShifts = thisAuth.shifts {
+            for aShift in theseShifts {
+                mainShiftList.addShift(newItem: aShift)
+            }
+        }
+        let a = 1
+    }
+
+
 }

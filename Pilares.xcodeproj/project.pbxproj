@@ -19,6 +19,7 @@
 		67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289B1FBBBB03001D7328 /* Institute.swift */; };
 		67AA289E1FBBBB8D001D7328 /* InstitutesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */; };
 		67AA28A01FBBBBAD001D7328 /* InstitutesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */; };
+		67BE42281FDDEC6D00CA5ABE /* myextensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BE42271FDDEC6D00CA5ABE /* myextensions.swift */; };
 		67CB89CB1FD0BF8000E5F8A5 /* OrdersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CB89CA1FD0BF8000E5F8A5 /* OrdersService.swift */; };
 		67CB89CD1FD0E97300E5F8A5 /* OrdersDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CB89CC1FD0E97300E5F8A5 /* OrdersDAO.swift */; };
 		67CC5B4D1FC5BB8A006369F5 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CC5B4C1FC5BB8A006369F5 /* InitialViewController.swift */; };
@@ -64,6 +65,7 @@
 		67AA289B1FBBBB03001D7328 /* Institute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institute.swift; path = model/Institute.swift; sourceTree = "<group>"; };
 		67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesService.swift; path = services/InstitutesService.swift; sourceTree = "<group>"; };
 		67AA289F1FBBBBAD001D7328 /* InstitutesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesDAO.swift; path = dao/InstitutesDAO.swift; sourceTree = "<group>"; };
+		67BE42271FDDEC6D00CA5ABE /* myextensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myextensions.swift; sourceTree = "<group>"; };
 		67CB89CA1FD0BF8000E5F8A5 /* OrdersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrdersService.swift; path = services/OrdersService.swift; sourceTree = "<group>"; };
 		67CB89CC1FD0E97300E5F8A5 /* OrdersDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrdersDAO.swift; path = dao/OrdersDAO.swift; sourceTree = "<group>"; };
 		67CC5B4C1FC5BB8A006369F5 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InitialViewController.swift; path = viewcontrollers/InitialViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		67BE42261FDDEC2300CA5ABE /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				67BE42271FDDEC6D00CA5ABE /* myextensions.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		67F776711F93DE030068D38C = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 				67F776BF1F94E4110068D38C /* dao */,
 				67F776951F93DF2F0068D38C /* views */,
 				67F776921F93DF0E0068D38C /* viewcontrollers */,
+				67BE42261FDDEC2300CA5ABE /* resources */,
 				67F7767D1F93DE030068D38C /* AppDelegate.swift */,
 				67F776811F93DE030068D38C /* Main.storyboard */,
 				67F776871F93DE030068D38C /* Assets.xcassets */,
@@ -362,6 +373,7 @@
 				67F776C51F94EA5F0068D38C /* DishesTableViewCell.swift in Sources */,
 				6753F1411FD6373C008F25FF /* OptionTableViewCell.swift in Sources */,
 				67CC5B571FC6FDFC006369F5 /* DishCategory.swift in Sources */,
+				67BE42281FDDEC6D00CA5ABE /* myextensions.swift in Sources */,
 				67F776BE1F94D7240068D38C /* DishesService.swift in Sources */,
 				67F776C91F9684420068D38C /* OrderItem.swift in Sources */,
 				67F776BC1F94D4010068D38C /* Dish.swift in Sources */,

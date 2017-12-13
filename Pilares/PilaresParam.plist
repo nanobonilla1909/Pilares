@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>handler</key>
-	<string>http://www.weminipocket.weoneconsulting.com/handlers</string>
+	<string>http://www.weminipocket.weoneconsulting.com/weminipocket/handlers</string>
 </dict>
 </plist>
