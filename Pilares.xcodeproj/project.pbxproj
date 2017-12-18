@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67406D3E1FBF37F800CD311C /* PilaresParam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67406D3D1FBF37F800CD311C /* PilaresParam.plist */; };
+		6752359F1FE175FC00E3E9FB /* OrderSubmittedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6752359E1FE175FC00E3E9FB /* OrderSubmittedViewController.swift */; };
 		6753F13F1FD636D9008F25FF /* OptionsSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753F13E1FD636D9008F25FF /* OptionsSideMenuTableViewController.swift */; };
 		6753F1411FD6373C008F25FF /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753F1401FD6373C008F25FF /* OptionTableViewCell.swift */; };
 		6753F1431FD757E7008F25FF /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753F1421FD757E7008F25FF /* OrderListViewController.swift */; };
@@ -52,6 +53,7 @@
 		097909B448EE1C1DDD7A3CEE /* Pods_Pilares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pilares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1DD1B2427C3A7C750226DB /* Pods-Pilares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pilares.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pilares/Pods-Pilares.release.xcconfig"; sourceTree = "<group>"; };
 		67406D3D1FBF37F800CD311C /* PilaresParam.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PilaresParam.plist; sourceTree = "<group>"; };
+		6752359E1FE175FC00E3E9FB /* OrderSubmittedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderSubmittedViewController.swift; path = viewcontrollers/OrderSubmittedViewController.swift; sourceTree = "<group>"; };
 		6753F13E1FD636D9008F25FF /* OptionsSideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionsSideMenuTableViewController.swift; path = viewcontrollers/OptionsSideMenuTableViewController.swift; sourceTree = "<group>"; };
 		6753F1401FD6373C008F25FF /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionTableViewCell.swift; path = views/OptionTableViewCell.swift; sourceTree = "<group>"; };
 		6753F1421FD757E7008F25FF /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderListViewController.swift; path = viewcontrollers/OrderListViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				678CCD3E1FCC510900580875 /* OrderViewController.swift */,
 				6753F13E1FD636D9008F25FF /* OptionsSideMenuTableViewController.swift */,
 				6753F1421FD757E7008F25FF /* OrderListViewController.swift */,
+				6752359E1FE175FC00E3E9FB /* OrderSubmittedViewController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				67CC5B551FC6FCA5006369F5 /* Authentication.swift in Sources */,
 				67CC5B4F1FC621B7006369F5 /* LogueadoViewController.swift in Sources */,
 				67AA289C1FBBBB03001D7328 /* Institute.swift in Sources */,
+				6752359F1FE175FC00E3E9FB /* OrderSubmittedViewController.swift in Sources */,
 				6753F13F1FD636D9008F25FF /* OptionsSideMenuTableViewController.swift in Sources */,
 				67CC5B591FC6FE5E006369F5 /* Shift.swift in Sources */,
 				67F776C31F94E85D0068D38C /* DishesTableViewController.swift in Sources */,

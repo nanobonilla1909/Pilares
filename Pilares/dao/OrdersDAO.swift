@@ -85,15 +85,6 @@ class OrdersDAO {
                     
                 }
             }
-            // Este funciona ATT
-            //            let miMenu1 = 1
-            //            let miPrecio1 = 99
-            //            let miCant1: Int = 1
-            //            let miComment1 = "sin mayonesa"
-            //
-            //            let myP = "[{'IdMenu':'" + String(miMenu1) + "','Precio':'" + String(miPrecio1) + "','Cantidad':'" + String(miCant1) + "','Observacion':'" + miComment1 + "'}]"
-            //            print(myP)
-            
             
             var params: [String: Any] = [:]
             
@@ -107,19 +98,6 @@ class OrdersDAO {
             Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
                 response in
                 if let value = response.value as? [String: AnyObject] {
-                    
-                    print("----------------------------")
-                    print("Este es el Request")
-                    print("----------------------------")
-                    print("Request: \(String(describing: response.request))")   // original url request
-                    print("----------------------------")
-                    print("Este es el Response")
-                    print("----------------------------")
-                    print("Response: \(String(describing: response.response))") // http url response
-                    print("----------------------------")
-                    print("Este es el Result")
-                    print("----------------------------")
-                    print("Result: \(response.result)")                         // response serialization result
                     
                     if let json = response.result.value {
                         print("JSON: \(json)") // serialized json response
@@ -203,25 +181,6 @@ class OrdersDAO {
         Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
             myResponse in
             if let value = myResponse.value as? [String: AnyObject] {
-                
-                
-                print("----------------------------")
-                print("Este es el Request")
-                print("----------------------------")
-                print("Request: \(String(describing: myResponse.request))")   // original url request
-                print("----------------------------")
-                print("Este es el Response")
-                print("----------------------------")
-                print("Response: \(String(describing: myResponse.response))") // http url response
-                print("----------------------------")
-                print("Este es el Result")
-                print("----------------------------")
-                print("Result: \(myResponse.result)")                         // response serialization result
-                
-                print("----------------------------")
-                print("Este es el Value")
-                print("----------------------------")
-                print("Result: \(myResponse.value)")
                 
                 var thisStatus: String = ""
                 

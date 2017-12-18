@@ -32,25 +32,6 @@ class InitialViewController: UIViewController {
             mainInstituteList.addInstitute(newItem: Inst01)
             mainInstituteList.addInstitute(newItem: Inst02)
             
-            // ATT - Borrar
-//            if let email = UserDefaults.standard.object(forKey: "email") as? String {
-//                print("Mail Inicial:" + email)
-//            }
-//
-//            if let aName = UserDefaults.standard.object(forKey: "name") as? String {
-//
-//                print("Nombre Inicial:" + aName)
-//            }
-//
-//            if let aInst = UserDefaults.standard.object(forKey: "institute") as? Int {
-//                print("Inst Inicial:" + String(aInst))
-//            }
-//
-//            if let aAuth = UserDefaults.standard.object(forKey: "authkey") as? String {
-//                print("Auth Inicial:" + aAuth)
-//            }
-//
-            
             
             if UserDefaults.standard.object(forKey: "authkey") == nil {
             
@@ -70,7 +51,9 @@ class InitialViewController: UIViewController {
                         if let auth2 = auth {
                             
                             self.setShiftsAndCategories(thisAuth: auth2)
-                            self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+                            // ATT  self.performSegue(withIdentifier: "segueToNavigation", sender: self)
+                            self.performSegue(withIdentifier: "toLogged", sender: self)
+                            
                             
                         } else {
                             
@@ -79,7 +62,7 @@ class InitialViewController: UIViewController {
                         
                     })
                     
-                    self.performSegue(withIdentifier: "toLogged", sender: self)
+                    // self.performSegue(withIdentifier: "toLogged", sender: self)
                     
                 }
                 
@@ -98,7 +81,6 @@ class InitialViewController: UIViewController {
                 mainShiftList.addShift(newItem: aShift)
             }
         }
-        let a = 1
     }
 
 

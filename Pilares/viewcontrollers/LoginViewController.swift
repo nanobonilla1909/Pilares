@@ -30,7 +30,7 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
 
         lblMessages.isHidden = true
         let managerInstituteList = InstitutesManager.getInstance()
-        var mainInstituteList = managerInstituteList.getInstitutes()
+        let mainInstituteList = managerInstituteList.getInstitutes()
         
         
         if let email = UserDefaults.standard.object(forKey: "email") as? String {
@@ -54,6 +54,9 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
             
         }
 
+        // Para permitir bajar el teclado cuando tapee en la pantalla
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
     }
 
@@ -138,5 +141,10 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
    
         //ATT copiar codigo de InitialVC
+    
+    func dismissKeyboard() {
+
+        view.endEditing(true)
+    }
 
 }

@@ -109,9 +109,9 @@ class UsersDAO {
         var params: [String: Any] = [:]
         
         // params["KEY"] = aKey.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        params["key"] = "1|1|2|201711162055"
+        params["key"] = aKey
 
-        let thisUrl = self.handler + "/ConfigurationGet.ashx"
+        let thisUrl = self.handler + "/ConfiguracionGet.ashx"
         
         Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
             

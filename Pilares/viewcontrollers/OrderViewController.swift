@@ -8,8 +8,9 @@
 
 import UIKit
 
-class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
 
+     var yaGrabo : Bool = false
     
     @IBOutlet weak var pckShifts: UIPickerView!
     @IBOutlet weak var orderTableView: UITableView!
@@ -23,6 +24,8 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var orderShift: String = ""
     var arrShiftsStr:[String] = []
     var arrShiftsId:[Int] = []
+    var strSubmittedOrderId: String = ""
+    var shiftSelected : Int = 0
     
     
     // Variables del PopUp View
@@ -30,6 +33,8 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var lblOrderId: UILabel!
     @IBOutlet weak var centerPopUpConstraint: NSLayoutConstraint!
     @IBOutlet weak var lblName: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +52,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         for aShift in allShifts {
             
             if let idShift = aShift.id, let nameShift = aShift.description {
-                txtShift = String(idShift) + " - " + nameShift
+                txtShift = nameShift
                 arrShiftsStr.append(txtShift)
                 arrShiftsId.append(idShift)
             }
@@ -69,7 +74,6 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         lblTotal.text = String(format: "%.2f", totalOrder)
         
-        // mainOrder.shiftId = "2"
         
         
     }
@@ -94,10 +98,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 150.0
-//    }
-    
+
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -177,18 +178,13 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
             ordersService.setOrderWithAPI(myOrder: mainOrder, termine: {
                 idOrder in
                 
-                
-//                self.lblOrderId.text = idOrder
-//                if let aName = UserDefaults.standard.object(forKey: "name") as? String {
-//                    self.lblName.text = aName
-//                }
-//                self.centerPopUpConstraint.constant = 0
-//                UIView.animate(withDuration: 0.3, animations: {
-//                    self.view.layoutIfNeeded()
-//                })
-                
+                self.strSubmittedOrderId = idOrder
+                print("adentro del closure:" + self.strSubmittedOrderId)
+            
                 mainOrder.resetOrder()
                 self.totalOrder = 0
+                self.yaGrabo = true
+                self.performSegue(withIdentifier: "segueToOrderSubmitted", sender: nil)
                 
             })
             
@@ -196,20 +192,36 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    @IBAction func btnPopUpAccepted(_ sender: UIButton) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        var inStackVCs: Int = 0
         
-        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
-        inStackVCs = viewControllers.count
-        if inStackVCs > 2 {
-            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
-        } else {
-            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true);
+        if let orderIdDetailViewController = segue.destination as? OrderSubmittedViewController {
+            let givenOrder = self.strSubmittedOrderId
+            orderIdDetailViewController.strOrderId = givenOrder
+            
         }
         
-//        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
-//        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if yaGrabo {
+            
+            var inStackVCs: Int = 0
+            
+            let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
+            inStackVCs = viewControllers.count
+            if inStackVCs > 2 {
+                self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+            } else {
+                self.navigationController!.popToViewController(viewControllers[viewControllers.count - 2], animated: true);
+            }
+            
+            yaGrabo = false
+            
+        }
+        
+        
         
     }
     
@@ -221,19 +233,33 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return allShifts[row].description
+        return arrShiftsStr[row]
     }
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return allShifts.count
+        return arrShiftsStr.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        // lblSelectedSchool.text = arrInstitutesStr[row]
-        // instituteIdSelected = arrInstitutesId[row]
+        let selectedShift = arrShiftsId[row]
+        shiftSelected = row
+        
     }
     
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = (view as? UILabel) ?? UILabel()
+        
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont(name: "Helvetica Neue", size: 16)
+        
+        // where data is an Array of String
+        label.text = arrShiftsStr[row]
+        
+        return label
+    }
     
 }
