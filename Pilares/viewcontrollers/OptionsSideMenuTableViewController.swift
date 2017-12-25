@@ -10,7 +10,7 @@ import UIKit
 
 class OptionsSideMenuTableViewController: UITableViewController {
 
-    let options : [String] = ["Ver Pedido", "Listado de Pedidos"]
+    let options : [String] = ["Pedido Actual", "Pedidos a Retirar"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,12 @@ class OptionsSideMenuTableViewController: UITableViewController {
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+       
         return options.count
     }
     

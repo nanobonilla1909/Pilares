@@ -58,12 +58,12 @@ class LogueadoViewController: UIViewController {
         super.viewDidLoad()
 
         if let email = UserDefaults.standard.object(forKey: "email") as? String {
-            lblName.text = email
+            lblMail.text = email
         }
         
         if let aName = UserDefaults.standard.object(forKey: "name") as? String {
             
-            lblMail.text = aName
+            lblName.text = aName
         }
         
         if let aInst = UserDefaults.standard.object(forKey: "institute") as? Int {

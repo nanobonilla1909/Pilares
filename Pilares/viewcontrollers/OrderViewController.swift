@@ -25,8 +25,9 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var arrShiftsStr:[String] = []
     var arrShiftsId:[Int] = []
     var strSubmittedOrderId: String = ""
-    var shiftSelected : Int = 0
-    
+    var selectedShiftId : Int?
+    var selectedShiftDesc : String?
+    var selectedShiftRow : Int?
     
     // Variables del PopUp View
     
@@ -49,6 +50,8 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         allShifts = mainShift.getShifts()
         var txtShift: String = ""
         
+        arrShiftsStr = []
+        arrShiftsId = []
         for aShift in allShifts {
             
             if let idShift = aShift.id, let nameShift = aShift.description {
@@ -56,7 +59,6 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 arrShiftsStr.append(txtShift)
                 arrShiftsId.append(idShift)
             }
-            
         }
         
         
@@ -72,8 +74,12 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        lblTotal.text = String(format: "%.2f", totalOrder)
+        lblTotal.text = "$ " + String(format: "%.2f", totalOrder)
         
+//        self.pckShifts.selectRow(0, inComponent: 0, animated: false)
+//        self.selectedShiftId = arrShiftsId[0]
+//        self.selectedShiftDesc = arrShiftsStr[0]
+//        mainOrder.setShift(thisShift: allShifts[0])
         
         
     }
@@ -113,7 +119,7 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
            
             totalOrder = totalOrder - totalItemToRemove
-            lblTotal.text = String(format: "%.2f", totalOrder)
+            lblTotal.text = "$ " + String(format: "%.2f", totalOrder)
             
             self.orderItems.remove(at: indexPath.row)
             tableView.beginUpdates()
@@ -154,10 +160,9 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             orderItems = []
             totalOrder = 0
-            lblTotal.text = String(format: "%.2f", totalOrder)
+            lblTotal.text = "$ " + String(format: "%.2f", totalOrder)
             
             orderTableView.reloadData()
-            // Aca tengo que recargar la tabla!!!
             
         }
         
@@ -174,19 +179,26 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if self.orderItems.count > 0 {
             
             let mainOrder = OrderManager.getInstance()
-            let ordersService = OrdersService()
-            ordersService.setOrderWithAPI(myOrder: mainOrder, termine: {
-                idOrder in
+            if let selectedShiftRow2 = selectedShiftRow {
                 
-                self.strSubmittedOrderId = idOrder
-                print("adentro del closure:" + self.strSubmittedOrderId)
-            
-                mainOrder.resetOrder()
-                self.totalOrder = 0
-                self.yaGrabo = true
-                self.performSegue(withIdentifier: "segueToOrderSubmitted", sender: nil)
+                mainOrder.setShift(thisShift: allShifts[selectedShiftRow2])
+                //            print("ID Turno Seleccionado: \(self.selectedShift)")
+                //            print("Turno De La Fila: \(self.selectedShiftRow)")
                 
-            })
+                let ordersService = OrdersService()
+                ordersService.setOrderWithAPI(myOrder: mainOrder, termine: {
+                    idOrder in
+                    
+                    self.strSubmittedOrderId = idOrder
+                    
+                    mainOrder.resetOrder()
+                    self.totalOrder = 0
+                    self.yaGrabo = true
+                    self.performSegue(withIdentifier: "segueToOrderSubmitted", sender: nil)
+                    
+                })
+                
+            }
             
         }        
     }
@@ -198,6 +210,14 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let orderIdDetailViewController = segue.destination as? OrderSubmittedViewController {
             let givenOrder = self.strSubmittedOrderId
             orderIdDetailViewController.strOrderId = givenOrder
+            
+            let givenShiftDescription = self.selectedShiftDesc
+            orderIdDetailViewController.strShiftDescription = givenShiftDescription
+            
+            if let givenName = UserDefaults.standard.object(forKey: "name") as? String {
+               orderIdDetailViewController.strName = givenName
+            }
+            
             
         }
         
@@ -233,33 +253,40 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return arrShiftsStr[row]
+        return row == 0 ? "" : arrShiftsStr[row - 1]
     }
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrShiftsStr.count
+        return arrShiftsStr.count + 1
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let selectedShift = arrShiftsId[row]
-        shiftSelected = row
+        if row > 0 {
+            self.selectedShiftId = arrShiftsId[row - 1]
+            self.selectedShiftDesc = arrShiftsStr [row - 1]
+            self.selectedShiftRow = row - 1
+            
+        } else {
+            selectedShiftRow = nil
+        }
+        
         
     }
     
 
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let label = (view as? UILabel) ?? UILabel()
-        
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont(name: "Helvetica Neue", size: 16)
-        
-        // where data is an Array of String
-        label.text = arrShiftsStr[row]
-        
-        return label
-    }
+//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+//        let label = (view as? UILabel) ?? UILabel()
+//
+//        label.textColor = .black
+//        label.textAlignment = .center
+//        label.font = UIFont(name: "Helvetica Neue", size: 16)
+//
+//        // where data is an Array of String
+//        label.text = arrShiftsStr[row - 1]
+//
+//        return label
+//    }
     
 }

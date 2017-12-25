@@ -119,23 +119,23 @@ class UsersDAO {
             if let value = myResponse.value as? [String: AnyObject] {
                 
                 
-                print("----------------------------")
-                print("Este es el Request")
-                print("----------------------------")
-                print("Request: \(String(describing: myResponse.request))")   // original url request
-                print("----------------------------")
-                print("Este es el Response")
-                print("----------------------------")
-                print("Response: \(String(describing: myResponse.response))") // http url response
-                print("----------------------------")
-                print("Este es el Result")
-                print("----------------------------")
-                print("Result: \(myResponse.result)")                         // response serialization result
-                
-                print("----------------------------")
-                print("Este es el Value")
-                print("----------------------------")
-                print("Result: \(myResponse.value)")
+//                print("----------------------------")
+//                print("Este es el Request")
+//                print("----------------------------")
+//                print("Request: \(String(describing: myResponse.request))")   // original url request
+//                print("----------------------------")
+//                print("Este es el Response")
+//                print("----------------------------")
+//                print("Response: \(String(describing: myResponse.response))") // http url response
+//                print("----------------------------")
+//                print("Este es el Result")
+//                print("----------------------------")
+//                print("Result: \(myResponse.result)")                         // response serialization result
+//                
+//                print("----------------------------")
+//                print("Este es el Value")
+//                print("----------------------------")
+//                print("Result: \(myResponse.value)")
                 
                 
                 var auth2 : Authentication?

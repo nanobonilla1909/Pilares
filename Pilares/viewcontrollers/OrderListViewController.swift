@@ -11,6 +11,7 @@ import UIKit
 class OrderListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var arrOrders: [Order] = []
+    var deleteConfirmation: Bool = false
     
     @IBOutlet weak var ordersTable: UITableView!
     
@@ -66,30 +67,49 @@ class OrderListViewController: UIViewController, UITableViewDelegate, UITableVie
             if let orderToDelete = arrOrders[indexPath.row].id {
                 
                 
-                let ordersService = OrdersService()
-                ordersService.deleteOrderWithAPI(idOrder: orderToDelete, termine: {
-                    thisStatus in
-                    
-                    if thisStatus == "OK" {
-                        self.arrOrders.remove(at: indexPath.row)
-                        tableView.beginUpdates()
-                        tableView.deleteRows(at: [indexPath], with: .automatic)
-                        tableView.endUpdates()
-                    }
+                let alert = UIAlertController(title: "Confirmación", message: "Estas seguro que querés eliminar el pedido?", preferredStyle: .alert)
+                
+                let DeleteAction = UIAlertAction(title: "Eliminar", style: .destructive, handler: { action in
                     
                     
+                    let ordersService = OrdersService()
+                    ordersService.deleteOrderWithAPI(idOrder: orderToDelete, termine: {
+                        thisStatus in
+                        
+                        if thisStatus == "OK" {
+                            self.arrOrders.remove(at: indexPath.row)
+                            tableView.beginUpdates()
+                            tableView.deleteRows(at: [indexPath], with: .automatic)
+                            tableView.endUpdates()
+                        }
+                        
+                        
+                    })
+                    
+                  
                 })
                 
+                let CancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: cancelDeletePlanet)
                 
-                
-                
+                alert.addAction(DeleteAction)
+                alert.addAction(CancelAction)
+                self.present(alert, animated: true, completion: nil)
+               
             }
-            
-            
             
         }
     }
     
 
+    
+    func handleDeletePlanet(alertAction: UIAlertAction!) -> Void {
+        deleteConfirmation = true
+        
+    }
+    
+    func cancelDeletePlanet(alertAction: UIAlertAction!) -> Void {
+        deleteConfirmation = false
+        
+    }
     
 }

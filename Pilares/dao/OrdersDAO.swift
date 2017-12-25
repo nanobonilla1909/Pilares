@@ -89,7 +89,8 @@ class OrdersDAO {
             var params: [String: Any] = [:]
             
             params["key"] = self.key
-            params["H"] = "2" // ATT Cambiar x el horario real
+           
+            params["H"] = myOrder.shiftId?.id
             params["P"] = myP
             
             let thisUrl = self.handler + "/PedidosSet.ashx"
@@ -98,14 +99,6 @@ class OrdersDAO {
             Alamofire.request(thisUrl, parameters: params).responseJSON(completionHandler: {
                 response in
                 if let value = response.value as? [String: AnyObject] {
-                    
-                    if let json = response.result.value {
-                        print("JSON: \(json)") // serialized json response
-                    }
-                    
-                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                        print("Data: \(utf8Text)") // original server data as UTF8 string
-                    }
                     
                     var idOrder: String = ""
                     

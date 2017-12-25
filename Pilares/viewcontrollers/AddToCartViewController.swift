@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddToCartViewController: UIViewController {
+class AddToCartViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var imgDish: UIImageView!
     @IBOutlet weak var lblDishDescription: UILabel!
@@ -21,15 +21,19 @@ class AddToCartViewController: UIViewController {
     
     @IBAction func btnSubstract(_ sender: UIButton) {
         
-        if aQty > 0 {
+        if aQty > 1 {
             aQty -= 1
             lblQuantity.text = String(aQty)
         }
     }
     
     @IBAction func btnAdd(_ sender: UIButton) {
-        aQty += 1
-        lblQuantity.text = String(aQty)
+        
+        if aQty <= 5 {
+            aQty += 1
+            lblQuantity.text = String(aQty)
+        }
+        
     }
     
     
@@ -53,9 +57,22 @@ class AddToCartViewController: UIViewController {
             lblPrice.text = "$ " + String(format: "%.2f", thisPriceDish)
         }
         
+        // esto es para poder usar la funcion textfield
+        self.txtComments.delegate = self
+        
+        
+        
+        // Para permitir bajar el teclado cuando tapee en la pantalla
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
+        
     }
 
-    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AddToCartViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddToCartViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
     
     @IBAction func btnAddToOrder(_ sender: UIButton) {
         
@@ -66,6 +83,7 @@ class AddToCartViewController: UIViewController {
                 if txtComments.text != nil {
                     aComment = txtComments.text! // ATT
                 }
+                
                 
                 let mainOrder = OrderManager.getInstance()
                 
@@ -79,5 +97,32 @@ class AddToCartViewController: UIViewController {
         
     }
     
-
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        // let newLength = text.characters.count + string.characters.count - range.length
+        let newLength = text.count + string.count - range.length
+        return newLength <= 60
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+    }
+    
 }

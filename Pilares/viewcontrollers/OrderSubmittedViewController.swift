@@ -10,8 +10,12 @@ import UIKit
 
 class OrderSubmittedViewController: UIViewController {
 
+    @IBOutlet weak var lblOrderName: UILabel!
+    @IBOutlet weak var lblShiftDescription: UILabel!
     @IBOutlet weak var lblOrderNumber: UILabel!
     var strOrderId: String?
+    var strShiftDescription: String?
+    var strName: String?
    
     
     
@@ -19,9 +23,29 @@ class OrderSubmittedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lblOrderName.numberOfLines = 1
+        lblOrderName.adjustsFontSizeToFitWidth = true
+        lblOrderName.minimumScaleFactor = 0.1
+        
+        if let thisName = strName {
+            lblOrderName.text = thisName
+        } else {
+            lblOrderName.text = "Error"
+        }
+        
+        if let thisShift = strShiftDescription {
+            lblShiftDescription.text = thisShift
+        } else {
+            lblShiftDescription.text = "Error"
+        }
+        
         if let thisOrderId = strOrderId {
             lblOrderNumber.text = thisOrderId
+        } else {
+            lblOrderNumber.text = "Error"
         }
+        
+       
         
     }
 

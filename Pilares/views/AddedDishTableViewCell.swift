@@ -37,7 +37,7 @@ class AddedDishTableViewCell: UITableViewCell {
         
         
         if let thisAddedDishPrice = aOrderItem.productPrice {
-            lblAddedDishUnitPrice.text = String(format: "%.2f", thisAddedDishPrice)
+            lblAddedDishUnitPrice.text = "$" + String(format: "%.2f", thisAddedDishPrice)
             unitPrice = thisAddedDishPrice
         }
         
@@ -47,7 +47,7 @@ class AddedDishTableViewCell: UITableViewCell {
         }
         
         totalPrice = unitPrice * Double(unitQty)
-        lblAddedDishTotalPrice.text = String(format: "%.2f", totalPrice)
+        lblAddedDishTotalPrice.text = "$" + String(format: "%.2f", totalPrice)
         
         
     }

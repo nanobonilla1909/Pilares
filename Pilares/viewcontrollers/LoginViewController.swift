@@ -105,7 +105,7 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
                             if let strKey = auth2.key {
                                 UserDefaults.standard.set(strKey, forKey: "authkey")
                             }
-                            self.setShiftsAndCategories(thisAuth: auth2)
+                            // self.setShiftsAndCategories(thisAuth: auth2)
                             self.performSegue(withIdentifier: "segueToNavigation", sender: self)
                         } else {
                             
@@ -130,16 +130,16 @@ class LoginViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     
-    func setShiftsAndCategories (thisAuth: Authentication) {
-        
-        let mainShiftList = ShiftsManager.getInstance()
-        if let theseShifts = thisAuth.shifts {
-            for aShift in theseShifts {
-                mainShiftList.addShift(newItem: aShift)
-            }
-        }
-    }
-   
+//    func setShiftsAndCategories (thisAuth: Authentication) {
+//
+//        let mainShiftList = ShiftsManager.getInstance()
+//        if let theseShifts = thisAuth.shifts {
+//            for aShift in theseShifts {
+//                mainShiftList.addShift(newItem: aShift)
+//            }
+//        }
+//    }
+//
         //ATT copiar codigo de InitialVC
     
     func dismissKeyboard() {

@@ -62,4 +62,10 @@ public class OrderManager {
         
     }
     
+    public func setShift(thisShift: Shift) {
+        
+        self.shiftId = thisShift
+        
+    }
+    
 }
