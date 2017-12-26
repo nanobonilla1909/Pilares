@@ -182,8 +182,6 @@ class OrderViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if let selectedShiftRow2 = selectedShiftRow {
                 
                 mainOrder.setShift(thisShift: allShifts[selectedShiftRow2])
-                //            print("ID Turno Seleccionado: \(self.selectedShift)")
-                //            print("Turno De La Fila: \(self.selectedShiftRow)")
                 
                 let ordersService = OrdersService()
                 ordersService.setOrderWithAPI(myOrder: mainOrder, termine: {

@@ -61,7 +61,8 @@ class InitialViewController: UIViewController {
                                
                             } else {
                                 
-                               self.lblMessages.text = "Falla de conexión ..."
+                               self.myActivityIndicator.stopAnimating()
+                               self.lblMessages.text = "Falla de conexión, cierre la aplicación e intente mas tarde."
                             }
                             
                         })
@@ -72,7 +73,9 @@ class InitialViewController: UIViewController {
                     
                 }
             } else {
-                 self.lblMessages.text = "Falla de conexión ..."
+                
+                self.myActivityIndicator.stopAnimating()
+                self.lblMessages.text = "Falla de conexión, cierre la aplicación e intente mas tarde."
             }
         })
         

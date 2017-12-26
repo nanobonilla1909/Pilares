@@ -61,8 +61,6 @@
 		6753F1461FD76E9A008F25FF /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderTableViewCell.swift; path = views/OrderTableViewCell.swift; sourceTree = "<group>"; };
 		678CCD3E1FCC510900580875 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderViewController.swift; path = viewcontrollers/OrderViewController.swift; sourceTree = "<group>"; };
 		678CCD401FCCB0DE00580875 /* AddedDishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddedDishTableViewCell.swift; path = views/AddedDishTableViewCell.swift; sourceTree = "<group>"; };
-		678CCD421FCDA3A600580875 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
-		678CCD431FCDA3A700580875 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		67AA28991FBBBA92001D7328 /* InsitutesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsitutesManager.swift; path = model/InsitutesManager.swift; sourceTree = "<group>"; };
 		67AA289B1FBBBB03001D7328 /* Institute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institute.swift; path = model/Institute.swift; sourceTree = "<group>"; };
 		67AA289D1FBBBB8D001D7328 /* InstitutesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstitutesService.swift; path = services/InstitutesService.swift; sourceTree = "<group>"; };
@@ -275,7 +273,7 @@
 				TargetAttributes = {
 					67F776791F93DE030068D38C = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 99HYZ8LB3U;
+						DevelopmentTeam = 7DRMB7G6VV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -410,7 +408,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				67F776821F93DE030068D38C /* Base */,
-				678CCD421FCDA3A600580875 /* es-419 */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -419,7 +416,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				67F7768A1F93DE030068D38C /* Base */,
-				678CCD431FCDA3A700580875 /* es-419 */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -529,13 +525,17 @@
 			baseConfigurationReference = 890FF52325F9FD1E7AEFAFC8 /* Pods-Pilares.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 99HYZ8LB3U;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DRMB7G6VV;
 				INFOPLIST_FILE = Pilares/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MySelf.Pilares;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weoneconsulting.Pilares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -544,13 +544,17 @@
 			baseConfigurationReference = 3F1DD1B2427C3A7C750226DB /* Pods-Pilares.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 99HYZ8LB3U;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DRMB7G6VV;
 				INFOPLIST_FILE = Pilares/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MySelf.Pilares;
+				PRODUCT_BUNDLE_IDENTIFIER = com.weoneconsulting.Pilares;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

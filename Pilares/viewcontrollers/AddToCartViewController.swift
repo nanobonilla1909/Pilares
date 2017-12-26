@@ -18,6 +18,7 @@ class AddToCartViewController: UIViewController, UITextFieldDelegate {
     
     var selectedDish: Dish?
     var aQty = 1
+    var myKeyboardHeight: CGFloat?
     
     @IBAction func btnSubstract(_ sender: UIButton) {
         
@@ -62,17 +63,26 @@ class AddToCartViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        // Para permitir bajar el teclado cuando tapee en la pantalla
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
-//        view.addGestureRecognizer(tap)
-        
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+//    override func viewDidAppear(_ animated: Bool) {
+//
+//        print("pasa por viewDidAppear")
+//        NotificationCenter.default.addObserver(self, selector: #selector(AddToCartViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(AddToCartViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(AddToCartViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddToCartViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
     
     @IBAction func btnAddToOrder(_ sender: UIButton) {
         
@@ -104,25 +114,59 @@ class AddToCartViewController: UIViewController, UITextFieldDelegate {
         return newLength <= 60
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
+//    func keyboardWillShow(notification: NSNotification) {
+//        print("pasa 1")
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            print("pasa 1b")
+//            if self.view.frame.origin.y == 0{
+//                print("pasa 1c")
+//                if keyboardSize.height != 0 && myKeyboardHeight == 0 {
+//                   self.view.frame.origin.y -= keyboardSize.height
+//                    myKeyboardHeight = keyboardSize.height
+//                } else {
+//                    if keyboardSize.height == 0 && myKeyboardHeight != 0 {
+//                        self.view.frame.origin.y -= myKeyboardHeight
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    func keyboardWillHide(notification: NSNotification) {
+//        print("pasa 2")
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y != 0{
+//                self.view.frame.origin.y += keyboardSize.height
+//            }
+//        }
+//    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        print("pasa 3")
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+//    }
+    
+    func keyboardWillHide() {
+        self.view.frame.origin.y = 0
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += keyboardSize.height
+    func keyboardWillChange(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if txtComments.isFirstResponder {
+                self.view.frame.origin.y = -keyboardSize.height
             }
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
 }

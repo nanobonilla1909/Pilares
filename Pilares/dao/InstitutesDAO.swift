@@ -32,7 +32,8 @@ class InstitutesDAO {
         // asi funciona 7-12
         //        let urltemp = "http://weminipocket.weoneconsulting.com/handlers/Institucionesget.ashx?key=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         //
-
+        var institutesArray: [Institute] = []
+        
         var params: [String: Any] = [:]
         params["key"] = 1
         let urltemp = handler + "/Institucionesget.ashx"
@@ -42,7 +43,7 @@ class InstitutesDAO {
             myResponse in
             if let value = myResponse.value as? [String: AnyObject] {
                 
-                var institutesArray: [Institute] = []
+                
                 var idInstitute: Int = 0
                 var descriptionInstitute: String = ""
                 
@@ -65,8 +66,12 @@ class InstitutesDAO {
                     }
                     
                 }
-                termine(institutesArray)
+                
+            } else {
+                institutesArray = []
+               
             }
+            termine(institutesArray)
         })
         
     }
